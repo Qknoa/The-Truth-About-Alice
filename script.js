@@ -1,136 +1,144 @@
-let currentApp = null;
-const apps = {
-  mail: { name: 'Correio.exe', pass: '', locked: false },
-  files: { name: 'Arquivos.exe', pass: 'ALICE', locked: true },
-  cam: { name: 'Cam_Sys.exe', pass: '0306', locked: true },
-  alice: { name: 'The_Truth_About_Alice.exe', pass: '', locked: false }
+const root = document.documentElement;
+const light = document.querySelector('.cursor-light');
+const audioToggle = document.querySelector('.audio-toggle');
+const modal = document.getElementById('character-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalText = document.getElementById('modal-text');
+const modalPortrait = document.getElementById('modal-portrait');
+let audioContext;
+let masterGain;
+let oscillators = [];
+
+const characters = {
+  alice: ['Alice', 'Paciente 15. Alice lembra do sangue, da porta aberta e de uma voz repetindo que ela precisava confessar. O jogo nunca confirma se suas lembranças são defesa, culpa ou implante.', 'A'],
+  coelho: ['Coelho', 'Uma presença apressada que atravessa áreas interditadas do Instituto. Ele parece ajudar Alice, mas sempre a conduz para memórias mais dolorosas.', 'R'],
+  tarrant: ['Dr. Arthur Tarrant', 'Fundador do Instituto Tarrant e defensor de terapias de reconstrução de memória. Seus relatórios soam clínicos demais para alguém tão interessado em apagar pessoas.', 'T'],
+  rainha: ['Rainha', 'A forma que a punição assume quando Alice perde controle. Voz vermelha, sentença curta, nenhuma chance de defesa.', 'Q'],
+  gato: ['Gato', 'O comentário no canto da visão. O sorriso que permanece depois que o corpo desaparece. Talvez seja aliado; talvez seja apenas lucidez cruel.', 'C'],
+  chapeleiro: ['Chapeleiro', 'Um sobrevivente dos protocolos antigos. Fala em enigmas porque frases diretas foram as primeiras coisas que o tratamento destruiu.', 'H']
 };
 
-document.getElementById('btn-portal').addEventListener('click', (e) => {
-  e.preventDefault();
-  document.getElementById('login-modal').classList.remove('hidden');
+document.addEventListener('pointermove', (event) => {
+  root.style.setProperty('--mx', `${event.clientX}px`);
+  root.style.setProperty('--my', `${event.clientY}px`);
+  if (light) light.style.opacity = '.32';
 });
 
-document.getElementById('btn-login').addEventListener('click', () => {
-  // Trigger Glitch
-  document.getElementById('login-modal').classList.add('hidden');
-  const glitch = document.getElementById('glitch-screen');
-  glitch.classList.remove('hidden');
-  
-  // Play glitch audio
-  const actx = new (window.AudioContext || window.webkitAudioContext)();
-  const osc = actx.createOscillator();
-  const gain = actx.createGain();
-  osc.type = 'sawtooth';
-  osc.frequency.setValueAtTime(100, actx.currentTime);
-  osc.frequency.exponentialRampToValueAtTime(800, actx.currentTime + 0.5);
-  gain.gain.setValueAtTime(0.5, actx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.01, actx.currentTime + 1.5);
-  osc.connect(gain);
-  gain.connect(actx.destination);
-  osc.start();
-  osc.stop(actx.currentTime + 1.5);
+window.addEventListener('scroll', () => {
+  root.style.setProperty('--scroll', Math.min(window.scrollY / window.innerHeight, 1).toFixed(3));
+}, { passive: true });
 
-  setTimeout(() => {
-    glitch.classList.add('hidden');
-    document.getElementById('fake-site').classList.add('hidden');
-    document.getElementById('os-screen').classList.remove('hidden');
-  }, 1500);
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.18 });
+
+document.querySelectorAll('.reveal').forEach((element, index) => {
+  element.style.transitionDelay = `${Math.min(index % 6, 5) * 70}ms`;
+  revealObserver.observe(element);
 });
 
-function openApp(appId) {
-  currentApp = appId;
-  const app = apps[appId];
-  if (app.locked) {
-    document.getElementById('pwd-app-name').textContent = app.name;
-    document.getElementById('app-password').value = '';
-    document.getElementById('pwd-error').classList.add('hidden');
-    document.getElementById('password-window').classList.remove('hidden');
-    document.getElementById('app-password').focus();
+document.querySelectorAll('.character-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    const data = characters[card.dataset.character];
+    modalTitle.textContent = data[0];
+    modalText.textContent = data[1];
+    modalPortrait.textContent = data[2];
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    playHit(80, 0.025);
+  });
+});
+
+document.querySelector('.modal-close').addEventListener('click', closeModal);
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) closeModal();
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeModal();
+});
+
+function closeModal() {
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+function startAtmosphere() {
+  audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  masterGain = audioContext.createGain();
+  masterGain.gain.value = 0.045;
+  masterGain.connect(audioContext.destination);
+  createDrone(38, 'sine', 0.45);
+  createDrone(57, 'triangle', 0.2);
+  createNoise();
+}
+
+function createDrone(frequency, type, volume) {
+  const oscillator = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+  oscillator.type = type;
+  oscillator.frequency.value = frequency;
+  gain.gain.value = volume;
+  oscillator.connect(gain).connect(masterGain);
+  oscillator.start();
+  oscillators.push(oscillator);
+}
+
+function createNoise() {
+  const bufferSize = audioContext.sampleRate * 2;
+  const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+  const data = buffer.getChannelData(0);
+  for (let i = 0; i < bufferSize; i += 1) data[i] = (Math.random() * 2 - 1) * 0.18;
+  const source = audioContext.createBufferSource();
+  const filter = audioContext.createBiquadFilter();
+  const gain = audioContext.createGain();
+  source.buffer = buffer;
+  source.loop = true;
+  filter.type = 'lowpass';
+  filter.frequency.value = 720;
+  gain.gain.value = 0.12;
+  source.connect(filter).connect(gain).connect(masterGain);
+  source.start();
+  oscillators.push(source);
+}
+
+function stopAtmosphere() {
+  oscillators.forEach((node) => node.stop());
+  oscillators = [];
+  audioContext.close();
+  audioContext = undefined;
+}
+
+function playHit(frequency, volume) {
+  if (!audioContext) return;
+  const oscillator = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+  oscillator.type = 'sawtooth';
+  oscillator.frequency.value = frequency;
+  gain.gain.value = volume;
+  gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.35);
+  oscillator.connect(gain).connect(masterGain);
+  oscillator.start();
+  oscillator.stop(audioContext.currentTime + 0.36);
+}
+
+audioToggle.addEventListener('click', () => {
+  const enabled = audioToggle.getAttribute('aria-pressed') === 'true';
+  if (enabled) {
+    stopAtmosphere();
+    audioToggle.setAttribute('aria-pressed', 'false');
+    audioToggle.textContent = 'Áudio: OFF';
   } else {
-    showAppContent(appId);
+    startAtmosphere();
+    audioToggle.setAttribute('aria-pressed', 'true');
+    audioToggle.textContent = 'Áudio: ON';
   }
-}
-
-function closePassword() {
-  document.getElementById('password-window').classList.add('hidden');
-}
-
-function checkPassword() {
-  const pwd = document.getElementById('app-password').value.toUpperCase().trim();
-  if (pwd === apps[currentApp].pass) {
-    apps[currentApp].locked = false;
-    closePassword();
-    showAppContent(currentApp);
-  } else {
-    document.getElementById('pwd-error').classList.remove('hidden');
-    document.getElementById('app-password').value = '';
-    document.getElementById('app-password').focus();
-  }
-}
-
-document.getElementById('app-password').addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') checkPassword();
 });
 
-function closeApp() {
-  document.getElementById('app-window').classList.add('hidden');
-}
-
-function showAppContent(appId) {
-  const win = document.getElementById('app-window');
-  const content = document.getElementById('app-content');
-  document.getElementById('app-title').textContent = apps[appId].name;
-  
-  if (appId === 'files') {
-    content.innerHTML = `
-      <div class="folder-grid">
-        <div class="file-item" onclick="openText('log_01.txt', 'Paciente 01 demonstra sinais de histeria. A mãe está morta. Ela não entende o que fez.')">📄 log_01.txt</div>
-        <div class="file-item" onclick="openText('notas_dr.txt', 'O diretor Tarrant solicitou aumento da dose. Ele diz que ela precisa esquecer o coelho. Qual coelho?')">📄 notas_dr.txt</div>
-        <div class="file-item" onclick="openText('DICA.TXT', 'Esqueci a senha das câmeras de novo. É a hora em que o assassinato aconteceu. 0306.')">📄 DICA.TXT</div>
-      </div>
-    `;
-  } else if (appId === 'mail') {
-    content.innerHTML = `
-      <ul class="mail-list">
-        <li onclick="openMail('DE: admin | PARA: todos', 'ALERTA DE SEGURANÇA: A senha da pasta Arquivos.exe foi redefinida. A nova senha é o primeiro nome da paciente do Quarto 15 em letras maiúsculas. (Nota: O nome começa com A e termina com LICE)')">ASSUNTO: Mudança de Senhas</li>
-        <li onclick="openMail('DE: dr_tarrant | PARA: admin', 'Apague os registros de hoje imediatamente. Ela sabe que estamos aqui. Não podemos deixar rastros no sistema.')">ASSUNTO: URGENTE</li>
-      </ul>
-      <div id="mail-view" class="mail-body hidden"></div>
-    `;
-  } else if (appId === 'cam') {
-    content.innerHTML = `
-      <div style="background: #000; width: 100%; height: 350px; position: relative; color: white; display: flex; align-items: flex-end; padding: 10px; font-family: 'VT323', monospace;">
-        <div style="position: absolute; top: 10px; left: 10px; color: red; animation: blink 1s infinite;">REC ●</div>
-        <div style="position: absolute; top: 10px; right: 10px;">CAM 04 - QUARTO 15</div>
-        <div style="text-align: center; width: 100%; font-size: 1.5rem; color: #ff0000; text-shadow: 0 0 5px red;">[ SINAL CORROMPIDO - MOVIMENTO DETECTADO NO CORREDOR ]</div>
-        <style>@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }</style>
-      </div>
-      <p style="margin-top: 10px; text-align:center; color: red;">ALERTA: Violação de contenção detectada.</p>
-    `;
-  } else if (appId === 'alice') {
-    content.innerHTML = `
-      <div style="width: 100%; height: 450px; background: #000; border: 2px inset #dfdfdf;">
-        <iframe src="game.html" style="width: 100%; height: 100%; border: none;" title="The Truth About Alice Game"></iframe>
-      </div>
-      <p style="text-align: center; margin-top: 10px; font-size: 0.9rem; color: #555;">(Conexão estabelecida com o servidor externo...)</p>
-    `;
-  }
-  
-  win.classList.remove('hidden');
-}
-
-function openText(title, body) {
-  const content = document.getElementById('app-content');
-  content.innerHTML = `
-    <button onclick="showAppContent('files')" style="margin-bottom: 10px; font-family: 'VT323'; font-size: 1rem; cursor: pointer;">⬅ Voltar</button>
-    <h4 style="margin-bottom: 10px;">${title}</h4>
-    <div class="text-file">${body}</div>
-  `;
-}
-
-function openMail(header, body) {
-  const view = document.getElementById('mail-view');
-  view.innerHTML = `<strong>${header}</strong><br><br>${body}`;
-  view.classList.remove('hidden');
-}
+document.querySelector('.newsletter').addEventListener('submit', (event) => {
+  event.preventDefault();
+  const button = event.currentTarget.querySelector('button');
+  button.textContent = 'Registrado';
+  playHit(120, 0.018);
+});
