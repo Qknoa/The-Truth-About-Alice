@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instituto Psiquiátrico Tarrant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- STATE 1: FAKE SITE -->
+  <div id="fake-site">
+    <header class="fake-header">
+      <div class="logo">
+        <span class="logo-icon">❖</span> INSTITUTO TARRANT
+      </div>
+      <nav>
+        <a href="#sobre">Nossa Missão</a>
+        <a href="#tratamentos">Especialidades</a>
+        <a href="#corpo-clinico">Corpo Clínico</a>
+        <a href="#" id="btn-portal" class="btn-portal">Acesso do Paciente</a>
+      </nav>
+    </header>
+    
+    <section class="fake-hero">
+      <div class="hero-text">
+        <h1>Excelência em Saúde Mental</h1>
+        <p>No Instituto Tarrant, combinamos medicina de ponta com um ambiente acolhedor. O seu passado não define o seu futuro. Nós ajudamos você a esquecer.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="alert('Agendamento temporariamente indisponível. Estamos lotados.')">Agendar Consulta</button>
+          <button class="btn-outline" onclick="document.getElementById('sobre').scrollIntoView({behavior: 'smooth'})">Conheça o Instituto</button>
+        </div>
+        <p class="creepy-sub" aria-hidden="true">Nós apagamos quem você era. Nós controlamos quem você será. Não tente fugir.</p>
+      </div>
+    </section>
+
+    <section class="fake-services" id="tratamentos">
+      <div class="container">
+        <h2 class="section-title">Nossas Especialidades</h2>
+        <p class="section-subtitle">Abordagens modernas para transtornos complexos.</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🧠</div>
+            <h3>Reabilitação Cognitiva</h3>
+            <p>Tratamentos avançados para contenção de memórias e reconstrução de traumas latentes.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💊</div>
+            <h3>Psicofarmacologia</h3>
+            <p>Medicação intensiva desenvolvida em nossos laboratórios exclusivos para submissão química rápida.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🏥</div>
+            <h3>Internação Intensiva</h3>
+            <p>Instalações de segurança máxima para pacientes que necessitam de isolamento total e observação estrita.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="fake-about" id="sobre">
+      <div class="container about-flex">
+        <div class="about-text">
+          <h2 class="section-title">Sobre o Instituto</h2>
+          <p>Fundado em 1985 pelo Dr. Arthur Tarrant, nosso instituto é pioneiro mundial em terapias experimentais. Acreditamos que nenhuma mente é inquebrável, e nenhum paciente é irrecuperável se houver força de vontade (e as doses certas).</p>
+          <p>Nossa instalação conta com 5 alas de contenção, áreas para exercícios supervisionados e monitoramento 24 horas para garantir que nenhum residente se perca... em seus próprios pensamentos.</p>
+        </div>
+        <div class="about-image">
+           <img src="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?q=80&w=1000&auto=format&fit=crop" alt="Instituto Tarrant Fachada">
+        </div>
+      </div>
+    </section>
+
+    <footer class="fake-footer">
+      <div class="container footer-content">
+        <div class="footer-info">
+          <h3>❖ INSTITUTO TARRANT</h3>
+          <p>Rodovia Estadual 44, km 12 - Zona Rural</p>
+          <p>Telefone: 0800 555 0306</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Internação Compulsória</a>
+          <a href="#">Contato de Emergência</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Instituto Tarrant. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- FAKE LOGIN MODAL -->
+    <div id="login-modal" class="hidden">
+      <div class="login-box">
+        <h2>Acesso ao Portal</h2>
+        <p>Insira suas credenciais para visualizar seu prontuário.</p>
+        <input type="text" placeholder="ID do Paciente" id="login-user" />
+        <input type="password" placeholder="Senha" id="login-pass" />
+        <button id="btn-login">Entrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLITCH TRANSITION -->
+  <div id="glitch-screen" class="hidden"></div>
+
+  <!-- STATE 2: RETRO OS -->
+  <div id="os-screen" class="hidden">
+    <div class="crt-overlay"></div>
+    <div class="os-desktop">
+      <div class="icon" onclick="openApp('mail')">
+        <div class="icon-img">✉️</div>
+        <span>Correio</span>
+      </div>
+      <div class="icon" onclick="openApp('files')">
+        <div class="icon-img">📁</div>
+        <span>Arquivos</span>
+      </div>
+      <div class="icon" onclick="openApp('cam')">
+        <div class="icon-img">📹</div>
+        <span>Câmeras</span>
+      </div>
+      <div class="icon" onclick="openApp('alice')">
+        <div class="icon-img">🐇</div>
+        <span>Alice.exe</span>
+      </div>
+    </div>
+
+    <!-- WINDOW: PASSWORD PROMPT -->
+    <div id="password-window" class="os-window hidden">
+      <div class="window-header">
+        <span>Segurança do Sistema</span>
+        <button onclick="closePassword()">X</button>
+      </div>
+      <div class="window-body text-center">
+        <p>Acesso Restrito. Insira a senha para <span id="pwd-app-name"></span></p>
+        <input type="text" id="app-password" class="os-input" autocomplete="off" />
+        <button onclick="checkPassword()" class="os-btn">Desbloquear</button>
+        <p id="pwd-error" class="error-text hidden">Senha incorreta.</p>
+      </div>
+    </div>
+
+    <!-- WINDOW: APP CONTENT -->
+    <div id="app-window" class="os-window hidden">
+      <div class="window-header">
+        <span id="app-title">App</span>
+        <button onclick="closeApp()">X</button>
+      </div>
+      <div class="window-body" id="app-content">
+        <!-- Content injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
