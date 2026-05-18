@@ -10,12 +10,12 @@ let masterGain;
 let oscillators = [];
 
 const characters = {
-  alice: ['Alice', 'Paciente 15. Alice lembra do sangue, da porta aberta e de uma voz repetindo que ela precisava confessar. O jogo nunca confirma se suas lembranças são defesa, culpa ou implante.', 'icon-eye'],
-  coelho: ['Coelho', 'Uma presença apressada que atravessa áreas interditadas do Instituto. Ele parece ajudar Alice, mas sempre a conduz para memórias mais dolorosas.', 'icon-rabbit'],
-  tarrant: ['Dr. Arthur Tarrant', 'Fundador do Instituto Tarrant e defensor de terapias de reconstrução de memória. Seus relatórios soam clínicos demais para alguém tão interessado em apagar pessoas.', 'icon-cross'],
-  rainha: ['Rainha', 'A forma que a punição assume quando Alice perde controle. Voz vermelha, sentença curta, nenhuma chance de defesa.', 'icon-crown'],
-  gato: ['Gato', 'O comentário no canto da visão. O sorriso que permanece depois que o corpo desaparece. Talvez seja aliado; talvez seja apenas lucidez cruel.', 'icon-cat'],
-  chapeleiro: ['Chapeleiro', 'Um sobrevivente dos protocolos antigos. Fala em enigmas porque frases diretas foram as primeiras coisas que o tratamento destruiu.', 'icon-hat']
+  alice: ['Alice', 'Paciente 15. Alice lembra do sangue, da porta aberta e de uma voz repetindo que ela precisava confessar. O jogo nunca confirma se suas lembranças são defesa, culpa ou implante.', 'A'],
+  coelho: ['Coelho', 'Uma presença apressada que atravessa áreas interditadas do Instituto. Ele parece ajudar Alice, mas sempre a conduz para memórias mais dolorosas.', 'R'],
+  tarrant: ['Dr. Arthur Tarrant', 'Fundador do Instituto Tarrant e defensor de terapias de reconstrução de memória. Seus relatórios soam clínicos demais para alguém tão interessado em apagar pessoas.', 'T'],
+  rainha: ['Rainha', 'A forma que a punição assume quando Alice perde controle. Voz vermelha, sentença curta, nenhuma chance de defesa.', 'Q'],
+  gato: ['Gato', 'O comentário no canto da visão. O sorriso que permanece depois que o corpo desaparece. Talvez seja aliado; talvez seja apenas lucidez cruel.', 'C'],
+  chapeleiro: ['Chapeleiro', 'Um sobrevivente dos protocolos antigos. Fala em enigmas porque frases diretas foram as primeiras coisas que o tratamento destruiu.', 'H']
 };
 
 document.addEventListener('pointermove', (event) => {
@@ -44,8 +44,7 @@ document.querySelectorAll('.character-card').forEach((card) => {
     const data = characters[card.dataset.character];
     modalTitle.textContent = data[0];
     modalText.textContent = data[1];
-    modalPortrait.textContent = '';
-    modalPortrait.className = `modal-portrait char-glyph ${data[2]}`;
+    modalPortrait.textContent = data[2];
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
     playHit(80, 0.025);
