@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /tarrant-os.html
+# C:/.NULL was never empty. TRACE RECOVER before MIRROR.
