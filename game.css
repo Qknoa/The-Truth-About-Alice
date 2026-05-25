@@ -1,6 +1,4 @@
-/* ==========================================================================
-   premium horror design system - game.css
-   ========================================================================== */
+
 :root {
   --bg-deep: #030303;
   --bg-section: rgba(4, 4, 4, 0.97);
@@ -16,7 +14,6 @@
   --font-mono: 'VT323', monospace;
 }
 
-/* Base Setup */
 html, body {
   margin: 0;
   padding: 0;
@@ -28,7 +25,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* Global Effects */
 .scanlines {
   position: fixed;
   top: 0;
@@ -54,7 +50,6 @@ html, body {
   z-index: 9998;
 }
 
-/* Floating Atmospheric Dust Particles */
 .particles-container {
   position: fixed;
   top: 0;
@@ -81,7 +76,6 @@ html, body {
   100% { transform: translateY(-10vh) translateX(100px) scale(1.5); opacity: 0; }
 }
 
-/* Ambient Audio Toggle Button */
 .audio-controller {
   position: fixed;
   bottom: 24px;
@@ -128,7 +122,6 @@ html, body {
   letter-spacing: 1px;
 }
 
-/* Shatter elements */
 .distant-door {
   position: fixed;
   top: 0;
@@ -177,9 +170,6 @@ html, body {
   backdrop-filter: blur(2px);
 }
 
-/* ==========================================================================
-   PORTAL VIEWPORTS & LANDING SECTIONS
-   ========================================================================== */
 #scroll-content {
   position: relative;
   z-index: 10;
@@ -216,7 +206,6 @@ html, body {
   border-bottom: 1px solid rgba(168, 10, 10, 0.08);
 }
 
-/* Title designs */
 .section-title {
   font-family: var(--font-display);
   font-size: 2.8rem;
@@ -238,9 +227,6 @@ html, body {
   margin-right: auto;
 }
 
-/* ==========================================================================
-   1. HERO SECTION SPECIFICS
-   ========================================================================== */
 #hero {
   background: transparent;
 }
@@ -297,7 +283,6 @@ html, body {
   text-shadow: 0 2px 4px #000;
 }
 
-/* Premium buttons */
 .hero-buttons {
   display: flex;
   gap: 20px;
@@ -364,7 +349,6 @@ html, body {
   box-shadow: 0 0 20px rgba(0, 125, 125, 0.4) !important;
 }
 
-/* Scroll indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 40px;
@@ -400,9 +384,7 @@ html, body {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(12px); }
 }
-/* ========================================================================== */
-/* 2. STORY SECTION SPECIFICS */
-/* ========================================================================== */
+
 #story {
   display: flex;
   align-items: center;
@@ -481,9 +463,7 @@ html, body {
   transform: scale(1);
   filter: blur(0);
 }
-/* ========================================================================== */
-/* 3. GAMEPLAY SECTION SPECIFICS */
-/* ========================================================================== */
+
 .gameplay-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -549,9 +529,7 @@ html, body {
   font-size: 0.95rem;
   line-height: 1.6;
 }
-/* ========================================================================== */
-/* 4. CHARACTERS SECTION SPECIFICS */
-/* ========================================================================== */
+
 .chars-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -641,9 +619,7 @@ html, body {
   font-weight: 700;
   letter-spacing: 1px;
 }
-/* ========================================================================== */
-/* 5. WORLD / LOCATIONS SPECIFICS */
-/* ========================================================================== */
+
 .world-showcase {
   background: #080808;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -732,9 +708,7 @@ html, body {
   line-height: 1.7;
   font-size: 1.05rem;
 }
-/* ========================================================================== */
-/* 6. GALLERY SPECIFICS */
-/* ========================================================================== */
+
 .media-gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -788,13 +762,11 @@ html, body {
 .media-item:hover .media-overlay {
   opacity: 1;
 }
-/* ========================================================================== */
-/* 7. VIDEO PLAYER CRT TV SPECIFICS */
-/* ========================================================================== */
+
 .tv-wrapper {
   max-width: 960px;
   margin: 0 auto;
-  background: #111827; /* Bezel Dark Gray */
+  background: #111827; 
   border-radius: 20px;
   border: 22px solid #1f2937;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9),
@@ -814,7 +786,6 @@ html, body {
   box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
 }
 
-/* Curvature distortion overlay */
 .tv-glass-glare {
   position: absolute;
   top: 0;
@@ -894,7 +865,6 @@ html, body {
   margin-bottom: 24px;
 }
 
-/* Control Panel */
 .tv-control-panel {
   background: #0f172a;
   padding: 20px 40px;
@@ -945,9 +915,7 @@ html, body {
 .tv-power-btn:active {
   background: #ef4444;
 }
-/* ========================================================================== */
-/* 8. CTA SECTION SPECIFICS */
-/* ========================================================================== */
+
 #cta {
   background: linear-gradient(rgba(0,0,0,0.92) 0%, rgba(168,10,10,0.08) 100%),
               url('asylum_corridor.png') center/cover;
@@ -982,9 +950,7 @@ html, body {
   color: var(--text-secondary);
   letter-spacing: 1px;
 }
-/* ========================================================================== */
-/* 9. FOOTER SPECIFICS */
-/* ========================================================================== */
+
 .game-footer {
   background: #050505;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1032,9 +998,7 @@ html, body {
 .footer-socials a:hover {
   color: var(--accent-red);
 }
-/* ========================================================================== */
-/* CHARACTER MODAL SPECIFICS */
-/* ========================================================================== */
+
 .char-modal-box {
   position: fixed;
   top: 0;
@@ -1144,9 +1108,7 @@ html, body {
   font-size: 1rem;
   line-height: 1.7;
 }
-/* ========================================================================== */
-/* LIGHTBOX SPECIFICS */
-/* ========================================================================== */
+
 .lightbox-modal {
   position: fixed;
   top: 0;
@@ -1201,9 +1163,7 @@ html, body {
   margin-top: 24px;
   letter-spacing: 1px;
 }
-/* ========================================================================== */
-/* RESPONSIVE BREAKPOINTS */
-/* ========================================================================== */
+
 @media (max-width: 991px) {
   .world-pane {
     flex-direction: column;
@@ -1246,7 +1206,6 @@ html, body {
   }
 }
 
-/* Premium Logo styling and atmospheric floating animation */
 .logo-wrapper {
   margin: 10px auto 25px;
   max-width: 580px;

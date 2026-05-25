@@ -1,8 +1,5 @@
-// ==========================================================================
-// OFFICIAL GAME SITE MASTER PORTAL - game.js
-// ==========================================================================
 
-// Global States
+
 let isTvOn = false;
 let isTvStatic = true;
 let isAudioActive = false;
@@ -11,9 +8,6 @@ let gameHumNode = null;
 let gameHeartbeatInterval = null;
 let particlesInterval = null;
 
-// ==========================================================================
-// 1. PROCEDURAL ATMOSPHERIC AUDIO SYNTHESIS
-// ==========================================================================
 function toggleAtmosphericAudio() {
   const btn = document.getElementById('audio-toggle-btn');
   if (!btn) return;
@@ -23,7 +17,7 @@ function toggleAtmosphericAudio() {
   }
   
   if (!isAudioActive) {
-    // Start Audio
+    
     isAudioActive = true;
     btn.classList.add('audio-active');
     btn.querySelector('.audio-label').textContent = "AMBIÊNCIA ATIVADA";
@@ -36,7 +30,7 @@ function toggleAtmosphericAudio() {
     startGameHeartbeat();
     playCinematicChime(440, 1.5, 'sine');
   } else {
-    // Stop Audio
+    
     isAudioActive = false;
     btn.classList.remove('audio-active');
     btn.querySelector('.audio-label').textContent = "AMBIÊNCIA DESATIVADA";
@@ -46,7 +40,6 @@ function toggleAtmosphericAudio() {
   }
 }
 
-// Procedural synthesizer chime
 function playCinematicChime(freq, duration, type = 'sine', gainVal = 0.08) {
   if (!isAudioActive || !gameAudioCtx) return;
   try {
@@ -67,7 +60,6 @@ function playCinematicChime(freq, duration, type = 'sine', gainVal = 0.08) {
   } catch (e) {}
 }
 
-// Continuous hospital basement ventilation hum
 function startGameHum() {
   if (!isAudioActive || !gameAudioCtx) return;
   try {
@@ -77,10 +69,10 @@ function startGameHum() {
     const gainNode = gameAudioCtx.createGain();
     
     osc1.type = 'sine';
-    osc1.frequency.setValueAtTime(55, gameAudioCtx.currentTime); // Low A hum
+    osc1.frequency.setValueAtTime(55, gameAudioCtx.currentTime); 
     
     osc2.type = 'sawtooth';
-    osc2.frequency.setValueAtTime(110, gameAudioCtx.currentTime); // Secondary octave
+    osc2.frequency.setValueAtTime(110, gameAudioCtx.currentTime); 
     
     filter.type = 'lowpass';
     filter.frequency.setValueAtTime(120, gameAudioCtx.currentTime);
@@ -109,36 +101,29 @@ function stopGameHum() {
   }
 }
 
-// Periodic heart rate monitor chime beep
 function startGameHeartbeat() {
   if (gameHeartbeatInterval) clearInterval(gameHeartbeatInterval);
   
   const tick = () => {
     if (!isAudioActive) return;
-    // Play normal slow clinical heartbeat beep (SILENCED)
-    // playCinematicChime(880, 0.09, 'sine', 0.04);
+
   };
   
-  gameHeartbeatInterval = setInterval(tick, 1500); // 1.5s intervals (40 bpm)
+  gameHeartbeatInterval = setInterval(tick, 1500); 
 }
 
-
-// ==========================================================================
-// 2. RADIAL GLASS SHATTER & FULL-SITE DOM ELEMENT SHATTER ENGINE
-// ==========================================================================
 const shatterBg = document.getElementById('shatter-bg');
 const shards = [];
 
 if (shatterBg) {
-  shatterBg.innerHTML = ""; // Clear any default grid shards
+  shatterBg.innerHTML = ""; 
   
-  const cx = 50; // Impact point center X (50%)
-  const cy = 40; // Impact point center Y (40%)
+  const cx = 50; 
+  const cy = 40; 
   const numRings = 5;
   const numSectors = 12;
   const points = [];
-  
-  // 1. Generate concentric polar grid with noise to create organic web cracks
+
   for (let r = 0; r <= numRings; r++) {
     points[r] = [];
     const baseRadius = r === 0 ? 0 : Math.pow(r / numRings, 1.4) * 80;
@@ -148,14 +133,14 @@ if (shatterBg) {
         points[r][s] = { x: cx, y: cy };
       } else {
         const angle = (s / numSectors) * 2 * Math.PI;
-        // Radial and angular noise for high-tension organic glass cracks
+        
         const rNoise = (Math.random() * 8 - 4) * (r / numRings);
         const aNoise = (Math.random() * 0.15 - 0.075);
         
         const finalRadius = baseRadius + rNoise;
         const finalAngle = angle + aNoise;
         
-        const px = cx + finalRadius * Math.cos(finalAngle) * 1.4; // adjust aspect ratio
+        const px = cx + finalRadius * Math.cos(finalAngle) * 1.4; 
         const py = cy + finalRadius * Math.sin(finalAngle);
         
         points[r][s] = {
@@ -164,10 +149,9 @@ if (shatterBg) {
         };
       }
     }
-    points[r][numSectors] = points[r][0]; // close circular loops
+    points[r][numSectors] = points[r][0]; 
   }
-  
-  // 2. Generate triangular & polygonal glass shards
+
   for (let r = 0; r < numRings; r++) {
     for (let s = 0; s < numSectors; s++) {
       const shard = document.createElement('div');
@@ -180,10 +164,10 @@ if (shatterBg) {
       
       let clipPathStr = "";
       if (r === 0) {
-        // Core center shards are sharp triangles
+        
         clipPathStr = `polygon(${p1.x}% ${p1.y}%, ${p2.x}% ${p2.y}%, ${p3.x}% ${p3.y}%)`;
       } else {
-        // Outer concentric shards are quadrilaterals
+        
         clipPathStr = `polygon(${p1.x}% ${p1.y}%, ${p2.x}% ${p2.y}%, ${p3.x}% ${p3.y}%, ${p4.x}% ${p4.y}%)`;
       }
       
@@ -191,15 +175,13 @@ if (shatterBg) {
       shard.style.width = '100vw';
       shard.style.height = '100vh';
       shard.style.backgroundPosition = 'center center';
-      
-      // Real physics outwards from impact center
+
       const avgX = (p1.x + p2.x + p3.x + p4.x) / 4;
       const avgY = (p1.y + p2.y + p3.y + p4.y) / 4;
       const dirX = avgX - cx;
       const dirY = avgY - cy;
       const dist = Math.sqrt(dirX * dirX + dirY * dirY) || 1;
-      
-      // Explosion dynamics on scroll
+
       const force = 350 + Math.random() * 450;
       const dx = (dirX / dist) * force + (Math.random() - 0.5) * 120;
       const dy = (dirY / dist) * force + (Math.random() - 0.5) * 120;
@@ -219,23 +201,8 @@ if (shatterBg) {
   }
 }
 
-// Register all website elements to dynamically shatter (Site se despedaçando) - DISABLED FOR CLEAN VISUALS
 const shatterElements = [];
-/*
-document.querySelectorAll('#scroll-content h2, #scroll-content p, #scroll-content h3, #scroll-content .gameplay-card, #scroll-content .char-card, #scroll-content .tv-wrapper, #scroll-content .hero-buttons, #scroll-content .logo-wrapper, #scroll-content .studio-badge').forEach(el => {
-  // Exclude technical overlays or particles
-  if (el.classList.contains('scanlines') || el.classList.contains('vignette') || el.classList.contains('particles-container')) return;
-  shatterElements.push({
-    el: el,
-    originalText: el.innerHTML,
-    factorX: (Math.random() - 0.5) * 450, // horizontal scattering drift
-    factorY: Math.random() * 220 + 180,   // drifts downwards
-    factorRot: (Math.random() - 0.5) * 70 // rotation drift
-  });
-});
-*/
 
-// Glitch creepy strings
 const creepyPhrases = [
   "ELA MENTIU",
   "NÃO HÁ SAÍDA",
@@ -256,7 +223,6 @@ const creepyPhrases = [
   "VOLTE PARA A CELA"
 ];
 
-// Parallax scrolling shatter sound trigger
 let lastScroll = window.scrollY;
 let hasShatteredPlay = false;
 
@@ -308,8 +274,7 @@ window.addEventListener('scroll', () => {
   const currentScroll = window.scrollY;
   const maxScroll = window.innerHeight * 1.2; 
   let progress = Math.max(0, Math.min(currentScroll / maxScroll, 1));
-  
-  // Re-rotates shards slightly when reversing scroll directions
+
   const scrollingUp = currentScroll < lastScroll;
   if (scrollingUp && progress > 0 && progress < 1) {
     shards.forEach(s => {
@@ -317,8 +282,7 @@ window.addEventListener('scroll', () => {
     });
   }
   lastScroll = currentScroll;
-  
-  // Glass shards shatter movement
+
   shards.forEach(s => {
     let p = Math.max(0, (progress - 0.05) / 0.95);
     if (p > 0) {
@@ -339,20 +303,14 @@ window.addEventListener('scroll', () => {
       }
     }
   });
-  
-  // Hero background zoom parallax
+
   const heroImg = document.getElementById('hero-parallax-img');
   if (heroImg) {
     heroImg.style.transform = `scale(${1 + progress * 0.15}) translateY(${progress * 60}px)`;
   }
-  // Calculate global bizarre progress factor as scroll goes deeper - REMOVED DISTORTIONS
 
 });
 
-
-// ==========================================================================
-// 3. 3D CARD INTERACTIVE TILTING
-// ==========================================================================
 function tiltCard(e, card) {
   const rect = card.getBoundingClientRect();
   const x = e.clientX - rect.left;
@@ -360,14 +318,12 @@ function tiltCard(e, card) {
   
   const midX = rect.width / 2;
   const midY = rect.height / 2;
-  
-  // Angle limits (max 10 degrees)
+
   const angleY = -(x - midX) / midX * 10;
   const angleX = (y - midY) / midY * 10;
   
   card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.02)`;
-  
-  // Set custom glow position properties in CSS
+
   card.style.setProperty('--mx', `${(x / rect.width) * 100}%`);
   card.style.setProperty('--my', `${(y / rect.height) * 100}%`);
 }
@@ -376,10 +332,6 @@ function resetCard(card) {
   card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
 }
 
-
-// ==========================================================================
-// 4. CHARACTERS CLINICAL DATABASE MODAL
-// ==========================================================================
 const charactersDatabase = {
   alice: {
     name: "Alice L. (Paciente A[redacted])",
@@ -390,7 +342,7 @@ const charactersDatabase = {
       <path d="M6 21c0-3.5 3-6 6-6s6 2.5 6 6"/>
       <path d="M4 10c0 1.5.5 3 1.5 4M20 10c0 1.5-.5 3-1.5 4"/>
     </svg>`,
-    chimeFreq: 523.25 // Note C5 (crystalline crystal chime)
+    chimeFreq: 523.25 
   },
   gato: {
     name: "O Gato Cheshire",
@@ -401,7 +353,7 @@ const charactersDatabase = {
       <path d="M8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM16 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
       <path d="M8 16c2.5 2 5.5 2 8 0"/>
     </svg>`,
-    chimeFreq: 392.00 // Note G4 (cynical resonant bell)
+    chimeFreq: 392.00 
   },
   coelho: {
     name: "O Coelho Branco (Cobaia #02)",
@@ -414,7 +366,7 @@ const charactersDatabase = {
       <circle cx="15" cy="12" r="1"/>
       <circle cx="12" cy="12" r="9" stroke-dasharray="2 2" opacity="0.4"/>
     </svg>`,
-    chimeFreq: 659.25 // Note E5 (ticking fast metallic note)
+    chimeFreq: 659.25 
   },
   chapeleiro: {
     name: "O Chapeleiro Louco (Cobaia #04)",
@@ -426,7 +378,7 @@ const charactersDatabase = {
       <path d="M5 14h14"/>
       <path d="M14 9l2-4h-2.5z" opacity="0.6"/>
     </svg>`,
-    chimeFreq: 293.66 // Note D4 (eccentric vibrato)
+    chimeFreq: 293.66 
   },
   tarrant: {
     name: "Dr. Arthur Tarrant",
@@ -437,7 +389,7 @@ const charactersDatabase = {
       <circle cx="12" cy="7" r="4" />
       <path d="M12 11v4M10 13h4" />
     </svg>`,
-    chimeFreq: 220.00 // Note A3 (heavy dark drone bell)
+    chimeFreq: 220.00 
   },
   rainha: {
     name: "A Rainha Vermelha",
@@ -448,7 +400,7 @@ const charactersDatabase = {
       <path d="M5 16v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3"/>
       <path d="M12 11c-1-1-2.5 0-2.5 1.5 0 2 2.5 3.5 2.5 3.5s2.5-1.5 2.5-3.5c0-1.5-1.5-2.5-2.5-1.5z"/>
     </svg>`,
-    chimeFreq: 174.61 // Note F3 (dramatic brass chime)
+    chimeFreq: 174.61 
   }
 };
 
@@ -463,8 +415,7 @@ function openCharModal(charId) {
   
   const modal = document.getElementById('char-modal');
   modal.classList.add('active');
-  
-  // Custom synth arpeggio based on character's frequency
+
   if (isAudioActive) {
     playCinematicChime(data.chimeFreq, 1.0, 'sine', 0.09);
     setTimeout(() => playCinematicChime(data.chimeFreq * 1.5, 0.8, 'triangle', 0.05), 150);
@@ -475,10 +426,6 @@ function closeCharModal() {
   document.getElementById('char-modal').classList.remove('active');
 }
 
-
-// ==========================================================================
-// 5. WORLD / LOCATIONS TABS SWITCHER
-// ==========================================================================
 const worldPanes = [
   {
     title: "O Asilo Rural",
@@ -498,7 +445,7 @@ const worldPanes = [
 ];
 
 function switchWorldView(idx) {
-  // Update Tabs Active State
+  
   const btns = document.querySelectorAll('.world-tab-btn');
   btns.forEach((btn, i) => {
     btn.classList.remove('active');
@@ -526,10 +473,6 @@ function switchWorldView(idx) {
   }
 }
 
-
-// ==========================================================================
-// 6. GALLERY LIGHTBOX
-// ==========================================================================
 function openGalleryLightbox(imgSrc) {
   const lightbox = document.getElementById('gallery-lightbox');
   const lImg = document.getElementById('lightbox-img');
@@ -551,30 +494,25 @@ function closeGalleryLightbox() {
   document.getElementById('gallery-lightbox').classList.remove('active');
 }
 
-
-// ==========================================================================
-// 7. CRT TV VHS TRAILER PLAYER
-// ==========================================================================
 function toggleTvPower() {
   const screen = document.getElementById('tv-screen');
   const noise = document.getElementById('tv-noise');
   if (!screen || !noise) return;
   
   if (!isTvOn) {
-    // Power ON
+    
     isTvOn = true;
     noise.classList.add('tv-noise-active');
     screen.style.filter = "brightness(1) contrast(1.1)";
-    playCinematicChime(2200, 0.1, 'sine', 0.05); // high frequency power beep
-    
-    // Auto turn off static to display video channel after 1s
+    playCinematicChime(2200, 0.1, 'sine', 0.05); 
+
     setTimeout(() => {
       isTvStatic = false;
       noise.classList.remove('tv-noise-active');
       renderSimulatedVideo();
     }, 1200);
   } else {
-    // Power OFF
+    
     isTvOn = false;
     isTvStatic = true;
     noise.classList.remove('tv-noise-active');
@@ -586,7 +524,7 @@ function toggleTvPower() {
         <button class="btn-premium primary" onclick="playSimulatedTrailer()" style="margin-top:20px;">Ligar Transmissão</button>
       </div>
     `;
-    playCinematicChime(150, 0.15, 'sawtooth', 0.08); // low shut down beep
+    playCinematicChime(150, 0.15, 'sawtooth', 0.08); 
   }
 }
 
@@ -622,15 +560,13 @@ tvLogoImg.src = 'logo_red.png';
 function renderSimulatedVideo() {
   const content = document.getElementById('tv-video-content');
   if (!content) return;
-  
-  // Custom atmospheric loop inside television screen using beautiful red visualizer canvas
+
   content.innerHTML = `
     <span class="vhs-time-stamp">PLAY ▶</span>
     <canvas id="tv-visualizer" style="width:100%; height:100%; object-fit:cover;"></canvas>
     <div style="position:absolute; bottom:30px; left: 20px; font-family:var(--font-mono); color:#a80a0a; text-shadow:0 0 5px rgba(0,0,0,0.8); font-size:1.1rem; background:rgba(0,0,0,0.75); padding:3px 10px; border: 1px solid #a80a0a;">FITA #15: O EXPERIMENTO ALICE</div>
   `;
-  
-  // Draw red audio visualizer on canvas
+
   const canvas = document.getElementById('tv-visualizer');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -640,26 +576,22 @@ function renderSimulatedVideo() {
     let frame = 0;
     const loop = () => {
       if (isTvStatic || !isTvOn) return;
-      
-      // Clean background with a very subtle red tint
+
       ctx.fillStyle = "#070101";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      // Slightly shift coordinates dynamically to create VCR analog jitter
+
       let jitterX = 0;
       let jitterY = 0;
       if (Math.random() < 0.12) {
         jitterX = Math.random() * 4 - 2;
         jitterY = Math.random() * 2 - 1;
       }
-      
-      // Draw the red logo scaled beautifully in the center
+
       const logoW = 380;
-      const logoH = (347 / 800) * logoW; // Scale based on 800x347 aspect ratio
+      const logoH = (347 / 800) * logoW; 
       const logoX = (canvas.width - logoW) / 2 + jitterX;
       const logoY = (canvas.height - logoH) / 2 - 15 + jitterY;
-      
-      // Draw logo with VCR chromatic aberration (Cyan / Red offsets)
+
       if (Math.random() < 0.06) {
         ctx.globalAlpha = 0.55;
         ctx.drawImage(tvLogoImg, logoX - 5, logoY, logoW, logoH);
@@ -668,8 +600,7 @@ function renderSimulatedVideo() {
       } else {
         ctx.drawImage(tvLogoImg, logoX, logoY, logoW, logoH);
       }
-      
-      // Draw CRT scanlines
+
       ctx.strokeStyle = "rgba(168,10,10,0.22)";
       ctx.lineWidth = 1;
       for (let i = 0; i < canvas.height; i += 4) {
@@ -678,13 +609,11 @@ function renderSimulatedVideo() {
         ctx.lineTo(canvas.width, i);
         ctx.stroke();
       }
-      
-      // Moving VCR scan hum bar overlay
+
       const humY = (frame * 1.2) % (canvas.height + 40) - 20;
       ctx.fillStyle = "rgba(255, 255, 255, 0.04)";
       ctx.fillRect(0, humY, canvas.width, 20);
-      
-      // Draw medical audio oscilloscope wave at the bottom
+
       ctx.strokeStyle = "rgba(239, 68, 68, 0.75)";
       ctx.lineWidth = 1.5;
       ctx.beginPath();
@@ -694,8 +623,7 @@ function renderSimulatedVideo() {
         else ctx.lineTo(x, y);
       }
       ctx.stroke();
-      
-      // Clinical audio tape subtitles
+
       const subtitles = [
         "[ÁUDIO RESTRITO A] ALICE: 'Por que os espelhos continuam mentindo?'",
         "[GRAVAÇÃO] DR. ARTHUR: 'A dosagem de Letheum deve ser mantida.'",
@@ -717,11 +645,6 @@ function renderSimulatedVideo() {
   }
 }
 
-
-// ==========================================================================
-// 8. GLOBAL INITIALIZATION
-// ==========================================================================
-// Dynamic story sections scroll animation
 const scrollObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -732,7 +655,6 @@ const scrollObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-text').forEach(el => scrollObserver.observe(el));
 
-// Dynamic story phrases cycler
 const gamePhrases = document.querySelectorAll('.phrase');
 let gamePhraseIdx = 0;
 if (gamePhrases.length > 0) {
@@ -743,7 +665,6 @@ if (gamePhrases.length > 0) {
   }, 4000);
 }
 
-// Procedural float dust particles generator
 function createDustParticles() {
   const container = document.getElementById('dust-particles');
   if (!container) return;

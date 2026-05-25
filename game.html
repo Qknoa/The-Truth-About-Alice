@@ -1,38 +1,38 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE TRUTH ABOUT ALICE</title>
-  <meta name="description" content="Experimente o terror psicológico premium em THE TRUTH ABOUT ALICE. Explore o Instituto Tarrant, enfrente seus traumas e decida o que é real." />
-  
-  <!-- SEO & Metatags -->
+  <meta name="description"
+    content="Experimente o terror psicológico premium em THE TRUTH ABOUT ALICE. Explore o Instituto Tarrant, enfrente seus traumas e decida o que é real." />
+
   <meta property="og:title" content="THE TRUTH ABOUT ALICE" />
-  <meta property="og:description" content="A verdade depende de quem observa. Uma descida cinematográfica ao horror psiquiátrico." />
+  <meta property="og:description"
+    content="A verdade depende de quem observa. Uma descida cinematográfica ao horror psiquiátrico." />
   <meta property="og:image" content="asylum_corridor.png" />
   <meta property="og:type" content="website" />
-  
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&family=VT323&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;600;700&family=VT323&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="game.css">
   <link rel="icon" type="image/png" href="logo_white.png">
 </head>
+
 <body>
 
-  <!-- Retro Scanline & Vignette Effects -->
   <div class="scanlines"></div>
   <div class="vignette"></div>
-  
-  <!-- Floating Atmospheric Dust/Particles -->
+
   <div class="particles-container" id="dust-particles"></div>
 
-  <!-- Background reveal when glass shatters -->
   <div class="distant-door" id="parallax-bg-deep"></div>
   <div id="shatter-bg"></div>
 
-  <!-- Main Scrollable Portal -->
   <div id="scroll-content">
 
-    <!-- 1. HERO SECTION -->
     <section id="hero" class="fullscreen-section">
       <div class="hero-bg-layer" id="hero-parallax-img"></div>
       <div class="hero-content">
@@ -42,9 +42,10 @@
         </div>
         <p class="subtitle">A verdade depende de quem observa.</p>
         <div class="hero-buttons">
-          <a href="https://itch.io" target="_blank" class="btn-premium primary" id="btn-play-game">Jogar no Itch.io</a>
-          <a href="#trailer" class="btn-premium" id="btn-watch-trailer">Assistir Trailer</a>
-          <a href="https://discord.gg" target="_blank" class="btn-premium outline" id="btn-discord">Discord Oficial</a>
+          <a href="https://little-cricket-studios.itch.io/the-truth-about-alice" target="_blank"
+            class="btn-premium primary" id="btn-play-game">Jogar no Itch.io</a>
+          <a href="https://discord.com/invite/739CWTZzvU" target="_blank" class="btn-premium outline"
+            id="btn-discord">Discord Oficial</a>
         </div>
       </div>
       <div class="scroll-indicator" onclick="document.getElementById('story').scrollIntoView({behavior: 'smooth'})">
@@ -53,238 +54,90 @@
       </div>
     </section>
 
-    <!-- 2. STORY INTRODUCTION SECTION -->
     <section id="story" class="section">
       <div class="section-bg-glow"></div>
       <div class="container story-container">
         <h2 class="section-title-tag">A Farsa</h2>
         <div class="story-fade-lines">
           <p class="fade-text">Alice perdeu tudo aos 15 anos de idade.</p>
-          <p class="fade-text">Um crime hediondo. Um julgamento sumário.</p>
-          <p class="fade-text">O Instituto Tarrant prometeu a cura pelo esquecimento.</p>
+          <p class="fade-text">Uma noite em fragmentos. Uma perda traumática e inexplicável.</p>
+          <p class="fade-text">O Instituto Tarrant ofereceu o silêncio como o único refúgio.</p>
           <p class="fade-text">Mas algumas memórias recusam-se a cicatrizar.</p>
         </div>
         <div class="dynamic-phrases-container">
           <span class="phrase active">"ELA MENTIU?"</span>
           <span class="phrase">"ELES MENTIRAM?"</span>
-          <span class="phrase">"QUEM SEGURAVA O AÇO FRIO?"</span>
           <span class="phrase">"VOCÊ ACHA QUE ESTÁ SEGURO?"</span>
         </div>
       </div>
     </section>
 
-    <!-- 3. GAMEPLAY SECTION -->
     <section id="gameplay" class="section">
       <div class="container">
         <h2 class="section-title">Pilares do Experimento</h2>
         <p class="section-subtitle">Mecânicas projetadas para desestabilizar suas certezas sensoriais.</p>
-        
+
         <div class="gameplay-grid">
-          <!-- Card 1 -->
+          
           <div class="gameplay-card" onmousemove="tiltCard(event, this)" onmouseleave="resetCard(this)">
             <div class="card-glow"></div>
             <div class="card-num">01</div>
-            <h3>Arquitetura do Silêncio</h3>
-            <p>Explore os corredores frios e as alas desabitadas do Instituto Tarrant. Cada sala carrega o peso do confinamento e o eco de sussurros de um passado que se recusa a ser enterrado.</p>
+            <h3>O Instituto Tarrant</h3>
+            <p>Explore os corredores, alas hospitalares e salas abandonadas do manicômio onde Alice está confinada. Entre portas trancadas, iluminação instável e equipamentos esquecidos, cada área aproxima o jogador dos mistérios escondidos dentro do Instituto Tarrant.</p>
           </div>
-          <!-- Card 2 -->
+          
           <div class="gameplay-card" onmousemove="tiltCard(event, this)" onmouseleave="resetCard(this)">
             <div class="card-glow"></div>
             <div class="card-num">02</div>
-            <h3>Ecos em Papel</h3>
-            <p>Reúna prontuários confidenciais e cartas espalhadas pelo manicômio. Palavras rasuradas e relatos esquecidos servem como fragmentos da verdade e pontes para a memória purgada de Alice.</p>
+            <h3>Cartas e Memórias</h3>
+            <p>Encontre cartas e objetos espalhados pelo manicômio enquanto fragmentos do passado de Alice começam a surgir. Cada descoberta ajuda a compreender os acontecimentos do instituto e libera o avanço para novas áreas do jogo.</p>
           </div>
-          <!-- Card 3 -->
+          
           <div class="gameplay-card" onmousemove="tiltCard(event, this)" onmouseleave="resetCard(this)">
             <div class="card-glow"></div>
             <div class="card-num">03</div>
-            <h3>Cadeados e Labirintos</h3>
-            <p>Desvende puzzles táteis de trancas, portas ocultas e códigos de calibragem. O caminho para a saída exige paciência com as combinações de metal frio e chaves escondidas em lixeiras hospitalares.</p>
+            <h3>Chaves e Passagens</h3>
+            <p>Resolva puzzles utilizando lógica, observação e exploração do cenário. Encontre chaves, destranque portas e utilize objetos escondidos para continuar avançando pelas diferentes áreas do manicômio.</p>
           </div>
-          <!-- Card 4 -->
+          
           <div class="gameplay-card" onmousemove="tiltCard(event, this)" onmouseleave="resetCard(this)">
             <div class="card-glow"></div>
             <div class="card-num">04</div>
-            <h3>Paranoia e Distorção</h3>
-            <p>Testemunhe mudanças bruscas no ambiente e alucinações que desafiam os sentidos. Pisos que mudam de lugar e telemetrias que oscilam revelam que os limites entre a cura e a loucura são ilusórios.</p>
+            <h3>Entre o Real e o Delírio</h3>
+            <p>Vivencie as distorções causadas pelo experimento enquanto sons, sombras e mudanças repentinas transformam o ambiente ao redor de Alice. Conforme a progressão avança, o jogo alterna entre momentos em 3D e sequências em 2D.</p>
           </div>
-          <!-- Card 5 -->
+          
           <div class="gameplay-card" onmousemove="tiltCard(event, this)" onmouseleave="resetCard(this)">
             <div class="card-glow"></div>
             <div class="card-num">05</div>
-            <h3>Fábulas do Isolamento</h3>
-            <p>Depare-se com criaturas nascidas dos traumas de Alice. Entidades mascaradas e vozes nas fendas de ventilação servem como guias e reflexos da culpa que a acompanha no subsolo.</p>
+            <h3>O Coelho, O Gato e O Chapeleiro</h3>
+            <p>Cruze o caminho de figuras inspiradas em Alice no País das Maravilhas durante a exploração do manicômio. Algumas entidades ajudam Alice durante puzzles e eventos, enquanto outras apenas observam silenciosamente seus passos.</p>
           </div>
-          <!-- Card 6 -->
+          
           <div class="gameplay-card" onmousemove="tiltCard(event, this)" onmouseleave="resetCard(this)">
             <div class="card-glow"></div>
             <div class="card-num">06</div>
-            <h3>A Execução Cognitiva</h3>
-            <p>Sobreviva ao confronto implacável contra o bloqueio mental severo personificado pela Rainha Vermelha. Quando os alarmes do subsolo tocarem, restará apenas correr para preservar o último vestígio da sua consciência.</p>
+            <h3>A Rainha de Copas</h3>
+            <p>Sobreviva aos pacientes violentos, médicos mascarados e à perseguição da Rainha de Copas. Entre combate,
+              fuga e exploração, Alice precisa escapar do manicômio antes que o experimento consuma completamente sua
+              mente.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. CHARACTERS SECTION -->
-    <section id="characters" class="section">
-      <div class="container">
-        <h2 class="section-title">Personagens</h2>
-        <p class="section-subtitle">Habitantes das alas de contenção médica. Clique para ler os relatórios confidenciais.</p>
-        
-        <div class="chars-grid">
-          <!-- Card Alice -->
-          <div class="char-card" data-id="alice" onclick="openCharModal('alice')">
-            <div class="char-frame">
-              <div class="char-silhouette">
-                <svg viewBox="0 0 24 24" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 2a5 5 0 0 0-5 5v1a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5z"/>
-                  <path d="M6 21c0-3.5 3-6 6-6s6 2.5 6 6"/>
-                  <path d="M4 10c0 1.5.5 3 1.5 4M20 10c0 1.5-.5 3-1.5 4"/>
-                </svg>
-              </div>
-              <div class="char-glitch-overlay"></div>
-            </div>
-            <div class="char-info">
-              <h3>Alice</h3>
-              <span>Paciente A[redacted]</span>
-            </div>
-          </div>
-          <!-- Card Gato -->
-          <div class="char-card" data-id="gato" onclick="openCharModal('gato')">
-            <div class="char-frame">
-              <div class="char-silhouette">
-                <svg viewBox="0 0 24 24" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 5l4 4h10l4-4v10a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6V5z"/>
-                  <path d="M8 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM16 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                  <path d="M8 16c2.5 2 5.5 2 8 0"/>
-                </svg>
-              </div>
-              <div class="char-glitch-overlay"></div>
-            </div>
-            <div class="char-info">
-              <h3>O Gato</h3>
-              <span>Voz do Vazio</span>
-            </div>
-          </div>
-          <!-- Card Coelho -->
-          <div class="char-card" data-id="coelho" onclick="openCharModal('coelho')">
-            <div class="char-frame">
-              <div class="char-silhouette">
-                <svg viewBox="0 0 24 24" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 12V3a2 2 0 0 0-4 0v9M15 12V3a2 2 0 0 1 4 0v9"/>
-                  <path d="M5 12a7 7 0 0 0 14 0c0-2-1.5-3.5-3.5-3.5h-7C6.5 8.5 5 10 5 12z"/>
-                  <circle cx="9" cy="12" r="1"/>
-                  <circle cx="15" cy="12" r="1"/>
-                  <circle cx="12" cy="12" r="9" stroke-dasharray="2 2" opacity="0.4"/>
-                </svg>
-              </div>
-              <div class="char-glitch-overlay"></div>
-            </div>
-            <div class="char-info">
-              <h3>O Coelho Branco</h3>
-              <span>Cobaia Sedada</span>
-            </div>
-          </div>
-          <!-- Card Chapeleiro -->
-          <div class="char-card" data-id="chapeleiro" onclick="openCharModal('chapeleiro')">
-            <div class="char-frame">
-              <div class="char-silhouette">
-                <svg viewBox="0 0 24 24" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 18h20"/>
-                  <path d="M5 18V6a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12"/>
-                  <path d="M5 14h14"/>
-                  <path d="M14 9l2-4h-2.5z" opacity="0.6"/>
-                </svg>
-              </div>
-              <div class="char-glitch-overlay"></div>
-            </div>
-            <div class="char-info">
-              <h3>O Chapeleiro</h3>
-              <span>Cobaia Sobrevivente</span>
-            </div>
-          </div>
-          <!-- Card Tarrant -->
-          <div class="char-card" data-id="tarrant" onclick="openCharModal('tarrant')">
-            <div class="char-frame">
-              <div class="char-silhouette">
-                <svg viewBox="0 0 24 24" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                  <circle cx="12" cy="7" r="4" />
-                  <path d="M12 11v4M10 13h4" />
-                </svg>
-              </div>
-              <div class="char-glitch-overlay"></div>
-            </div>
-            <div class="char-info">
-              <h3>Dr. Arthur Tarrant</h3>
-              <span>Diretor Médico Geral</span>
-            </div>
-          </div>
-          <!-- Card Rainha -->
-          <div class="char-card" data-id="rainha" onclick="openCharModal('rainha')">
-            <div class="char-frame">
-              <div class="char-silhouette">
-                <svg viewBox="0 0 24 24" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z"/>
-                  <path d="M5 16v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3"/>
-                  <path d="M12 11c-1-1-2.5 0-2.5 1.5 0 2 2.5 3.5 2.5 3.5s2.5-1.5 2.5-3.5c0-1.5-1.5-2.5-2.5-1.5z"/>
-                </svg>
-              </div>
-              <div class="char-glitch-overlay"></div>
-            </div>
-            <div class="char-info">
-              <h3>Rainha de Copas</h3>
-              <span>Manifestação Censória</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. VIDEO TRAILER PLAYER (CRT TV DESIGN) -->
-    <section id="trailer" class="section">
-      <div class="container">
-        <h2 class="section-title">Arquivo VHS Registrado</h2>
-        <p class="section-subtitle">Ligue a TV CRT hospitalar para reproduzir a fita recuperada.</p>
-        
-        <div class="tv-wrapper">
-          <div class="tv-screen" id="tv-screen">
-            <div class="tv-noise-overlay" id="tv-noise"></div>
-            <div class="tv-glass-glare"></div>
-            <div class="tv-playback-content" id="tv-video-content">
-              <span class="vhs-time-stamp">REC  AM 03:06:12</span>
-              <div class="tv-center-message">
-                <h3>SINAL DE CONSCIÊNCIA PERDIDO</h3>
-                <button class="btn-premium primary" onclick="playSimulatedTrailer()" style="margin-top:20px;">Ligar Transmissão</button>
-              </div>
-            </div>
-          </div>
-          <div class="tv-control-panel">
-            <div class="tv-brand">TARRANT SYSTEMS INC.</div>
-            <div class="tv-knobs">
-              <span class="tv-knob" onclick="playSimulatedTrailer()" title="Volume"></span>
-              <span class="tv-knob" onclick="toggleTvStatic()" title="Canais"></span>
-              <span class="tv-power-btn" onclick="toggleTvPower()" title="Power ON/OFF"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. CTA SECTION -->
     <section id="cta" class="fullscreen-section">
       <div class="cta-backdrop-blur"></div>
       <div class="cta-content container">
-        <h2 class="final-text">Algumas portas de memória nunca deveriam ser abertas.</h2>
+        <h2 class="final-text">Nem toda cura é feita para salvar você.</h2>
         <p class="cta-sub">Você aceita assinar os termos de sua própria internação?</p>
         <div class="hero-buttons" style="margin-top: 40px;">
-          <a href="https://itch.io" target="_blank" class="btn-premium primary" id="btn-cta-play">Jogar Demo Gratuita</a>
+          <a href="https://little-cricket-studios.itch.io/the-truth-about-alice" target="_blank"
+            class="btn-premium primary" id="btn-cta-play">Jogar Demo Gratuita</a>
         </div>
       </div>
     </section>
 
-    <!-- 9. FOOTER -->
     <footer class="game-footer">
       <div class="container footer-elements">
         <div class="footer-left">
@@ -293,8 +146,8 @@
         </div>
         <div class="footer-right">
           <div class="footer-socials">
-            <a href="https://itch.io" target="_blank">Itch.io</a>
-            <a href="https://discord.com" target="_blank">Discord</a>
+            <a href="https://little-cricket-studios.itch.io/the-truth-about-alice" target="_blank">Itch.io</a>
+            <a href="https://discord.com/invite/739CWTZzvU" target="_blank">Discord</a>
           </div>
         </div>
       </div>
@@ -302,31 +155,7 @@
 
   </div>
 
-  <!-- CHARACTER SYSTEM MODAL -->
-  <div id="char-modal" class="char-modal-box" style="display: none;">
-    <div class="char-modal-backdrop" onclick="closeCharModal()"></div>
-    <div class="char-modal-content">
-      <button class="char-modal-close" onclick="closeCharModal()">&times;</button>
-      <div class="char-modal-flex">
-        <div class="char-modal-image-col">
-          <div class="char-modal-avatar" id="modal-char-avatar">?</div>
-        </div>
-        <div class="char-modal-text-col">
-          <span class="char-modal-subtitle" id="modal-char-role">FICHA CLÍNICA CONFIDENCIAL</span>
-          <h2 class="char-modal-title" id="modal-char-name">Nome</h2>
-          <div class="char-modal-body" id="modal-char-desc">Descrição.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FULLSCREEN LIGHTBOX -->
-  <div id="gallery-lightbox" class="lightbox-modal" onclick="closeGalleryLightbox()">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="Ampliação de Evidência">
-    <div id="lightbox-caption">Legenda da evidência do hospital.</div>
-  </div>
-
   <script src="game.js"></script>
 </body>
+
 </html>

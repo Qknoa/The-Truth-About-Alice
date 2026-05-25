@@ -1,32 +1,27 @@
-/* ==========================================================================
-   DESIGN SYSTEM & VARIABLES
-   ========================================================================== */
+
 :root {
-  /* Clean Hospital Website Theme */
+  
   --fake-bg: #f5f7fa;
   --fake-text: #2c3e50;
   --fake-primary: #1d3557;
   --fake-accent: #457b9d;
   --fake-light: #f1faee;
   --fake-border: #e2e8f0;
-  
-  /* Retro Tarrant OS Theme */
-  --os-bg: #007d7d; /* Teal Windows 95 background */
-  --os-window: #c0c0c0; /* Standard light gray */
+
+  --os-bg: #007d7d; 
+  --os-window: #c0c0c0; 
   --os-text: #000000;
-  --os-header-bg: #000080; /* Classic dark blue header */
+  --os-header-bg: #000080; 
   --os-header-text: #ffffff;
   --os-border-light: #ffffff;
   --os-border-dark: #808080;
   --os-border-darkest: #000000;
-  
-  /* Fonts */
+
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-retro: 'VT323', monospace;
   --font-serif: 'Cinzel', Georgia, serif;
 }
 
-/* Reset and Global Setup */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -43,9 +38,6 @@ body {
   background: #000;
 }
 
-/* ==========================================================================
-   PART 1: THE FAKE CLINICAL WEBSITE
-   ========================================================================== */
 #fake-site {
   width: 100vw;
   height: 100vh;
@@ -64,7 +56,6 @@ body {
   padding: 0 24px;
 }
 
-/* Header & Navigation */
 .fake-header {
   display: flex;
   justify-content: space-between;
@@ -151,7 +142,6 @@ nav a:hover {
   box-shadow: 0 6px 12px rgba(29, 53, 87, 0.25);
 }
 
-/* Hero Section */
 .fake-hero {
   min-height: 80vh;
   display: flex;
@@ -227,7 +217,6 @@ nav a:hover {
   background: rgba(29, 53, 87, 0.05);
 }
 
-/* Creepy Subtext (Egg hunt) */
 .creepy-sub {
   font-size: 0.8rem;
   color: #a0aec0;
@@ -242,7 +231,6 @@ nav a:hover {
   color: #e63946;
 }
 
-/* Services / Mission */
 .fake-services {
   padding: 100px 0;
   background: #ffffff;
@@ -301,7 +289,6 @@ nav a:hover {
   line-height: 1.6;
 }
 
-/* Clinical Body Section */
 .fake-clinical {
   padding: 100px 0;
   background: #f8fafc;
@@ -356,7 +343,6 @@ nav a:hover {
   font-style: italic;
 }
 
-/* Footer styling */
 .fake-footer {
   background: #0f172a;
   color: #94a3b8;
@@ -406,7 +392,6 @@ nav a:hover {
   color: #64748b;
 }
 
-/* Fake Login Modal Box */
 #login-modal {
   position: fixed;
   top: 0;
@@ -543,10 +528,6 @@ nav a:hover {
   color: var(--fake-primary);
 }
 
-
-/* ==========================================================================
-   PART 2: THE BIOS / BOOT SCREEN
-   ========================================================================== */
 #boot-screen {
   position: fixed;
   top: 0;
@@ -554,7 +535,7 @@ nav a:hover {
   width: 100vw;
   height: 100vh;
   background: #000000;
-  color: #39ff14; /* Matrix Green */
+  color: #39ff14; 
   z-index: 1000;
   overflow: hidden;
   padding: 40px;
@@ -568,10 +549,6 @@ nav a:hover {
   overflow: hidden;
 }
 
-
-/* ==========================================================================
-   PART 3: THE TARRANT RETRO OS
-   ========================================================================== */
 #os-screen {
   position: fixed;
   top: 0;
@@ -591,7 +568,6 @@ nav a:hover {
   transition: filter 0.5s ease;
 }
 
-/* CRT monitor lens effect */
 .crt-overlay {
   position: absolute;
   top: 0;
@@ -623,7 +599,6 @@ nav a:hover {
   z-index: 9998;
 }
 
-/* Glitch Screen Layer */
 .glitch-layer {
   position: absolute;
   top: 0;
@@ -651,7 +626,6 @@ nav a:hover {
   100% { background: rgba(0,255,255,0.08); transform: translate(1px, 2px); }
 }
 
-/* Desktop Icons Layout */
 .os-desktop {
   flex: 1;
   padding: 30px;
@@ -698,7 +672,6 @@ nav a:hover {
   border-radius: 2px;
 }
 
-/* Window Component Bevel styles */
 .os-window {
   position: absolute;
   background: var(--os-window);
@@ -806,7 +779,6 @@ nav a:hover {
   box-shadow: 1px 1px 0 var(--os-border-dark) inset;
 }
 
-/* Taskbar style */
 .os-taskbar {
   height: 40px;
   background: var(--os-window);
@@ -851,7 +823,6 @@ nav a:hover {
   padding-left: 11px;
 }
 
-/* Start Menu Pop-up */
 .start-menu {
   position: absolute;
   bottom: 34px;
@@ -913,7 +884,6 @@ nav a:hover {
   margin: 5px 0;
 }
 
-/* Taskbar tabs */
 .taskbar-tabs {
   flex: 1;
   margin: 0 15px;
@@ -951,7 +921,6 @@ nav a:hover {
   box-shadow: 1px 1px 0 var(--os-border-dark) inset;
 }
 
-/* System Tray */
 .taskbar-tray {
   background: var(--os-window);
   border: 2px inset;
@@ -979,11 +948,6 @@ nav a:hover {
   margin-left: 5px;
 }
 
-/* ==========================================================================
-   APP WINDOW SPECIFICS
-   ========================================================================== */
-
-/* File Explorer styling */
 .explorer-address-bar {
   display: flex;
   align-items: center;
@@ -1084,7 +1048,6 @@ nav a:hover {
   color: #000;
 }
 
-/* Mail app styling */
 .mail-window-body {
   padding: 0 !important;
   display: flex;
@@ -1188,7 +1151,6 @@ nav a:hover {
   color: #111111;
 }
 
-/* Camera monitor */
 .cam-window-body {
   padding: 0 !important;
   background: #111 !important;
@@ -1309,7 +1271,6 @@ nav a:hover {
   margin-top: 10px;
 }
 
-/* CRT Terminal styles */
 .terminal-window-body {
   background: #020202 !important;
   padding: 0 !important;
@@ -1323,7 +1284,7 @@ nav a:hover {
   padding: 12px;
   font-family: var(--font-retro);
   font-size: 1.4rem;
-  color: #39ff14; /* Cyber green */
+  color: #39ff14; 
   background: #020202;
   box-shadow: inset 0 0 20px rgba(57, 255, 20, 0.15);
 }
@@ -1363,7 +1324,6 @@ nav a:hover {
   text-transform: uppercase;
 }
 
-/* Antivirus Styles */
 .antivirus-body {
   background: #f1f5f9 !important;
 }
@@ -1439,7 +1399,6 @@ nav a:hover {
   transition: width 0.1s linear;
 }
 
-/* Lixeira items grid */
 .trash-body {
   display: flex;
   flex-direction: column;
@@ -1464,9 +1423,8 @@ nav a:hover {
   overflow-y: auto;
 }
 
-/* Secure Reader Styling */
 .reader-body {
-  background: #fffdf2 !important; /* Vintage paper color */
+  background: #fffdf2 !important; 
 }
 
 .reader-content {
@@ -1478,7 +1436,6 @@ nav a:hover {
   padding: 10px;
 }
 
-/* Error Popups */
 .error-popup-body {
   background: var(--os-window) !important;
   display: flex;
@@ -1506,17 +1463,13 @@ nav a:hover {
   gap: 8px;
 }
 
-
-/* ==========================================================================
-   PART 4: THE BLUE SCREEN OF DEATH (BSOD)
-   ========================================================================== */
 #bsod-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #000088; /* Blue */
+  background: #000088; 
   color: #ffffff;
   z-index: 100000;
   padding: 10% 12%;
@@ -1545,10 +1498,6 @@ nav a:hover {
   color: #ff9999;
 }
 
-
-/* ==========================================================================
-   UTILITY & MISCELLANEOUS GLOBALS
-   ========================================================================== */
 .font-mono {
   font-family: var(--font-retro), monospace;
 }
@@ -1561,7 +1510,6 @@ nav a:hover {
   display: none !important;
 }
 
-/* Scrollbar customization for retro windows */
 .window-body::-webkit-scrollbar,
 .terminal-output::-webkit-scrollbar,
 .explorer-sidebar::-webkit-scrollbar,
@@ -1591,23 +1539,14 @@ nav a:hover {
   border-bottom-color: var(--os-border-light);
 }
 
-/* Draggable window marker helper */
 .os-window-active {
   z-index: 1000 !important;
 }
 
-/* Custom transitions and behaviors for game sites */
 .btn-game-site {
   border-radius: 4px;
 }
 
-/* ==========================================================================
-   UPGRADES FOR INTERACTIVE PSYCHOLOGICAL ARG
-   ========================================================================== */
-
-
-
-/* Modern Clinical Subpage Modal */
 .hospital-modal {
   position: fixed;
   top: 0;
@@ -1704,7 +1643,6 @@ nav a:hover {
   margin-bottom: 4px;
 }
 
-/* Retro OS Icon Style Upgrades (Pixel SVGs) */
 .desktop-icon-img {
   width: 48px;
   height: 48px;
@@ -1724,7 +1662,6 @@ nav a:hover {
   filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.45));
 }
 
-/* Taskbar Pinned bottom adjustments */
 .os-taskbar {
   position: absolute;
   bottom: 0;
@@ -1745,11 +1682,10 @@ nav a:hover {
 }
 
 .os-desktop {
-  padding-bottom: 50px !important; /* Prevent cover by bottom taskbar */
+  padding-bottom: 50px !important; 
   height: calc(100vh - 42px) !important;
 }
 
-/* OS Message Box Styles */
 .os-msg-body {
   padding: 15px !important;
   background: #c0c0c0 !important;
@@ -1781,7 +1717,6 @@ nav a:hover {
   gap: 8px;
 }
 
-/* Custom Styles for SweetAlert2 (Clinical theme) */
 .clinical-swal-popup {
   border-radius: 8px !important;
   border: 1px solid var(--fake-border) !important;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,30 +9,30 @@
     AVISO: Eu não sei se alguém vai conseguir ver isso... mas eu preciso registrar. Eu vi e fiz coisas horríveis dentro deste manicômio. Este lugar... o Instituto Tarrant... é apenas uma fachada impecável para encobrir algo absolutamente aterrorizante. Eles quebram mentes, apagam vidas e reescrevem o que somos como se fôssemos feitos de cera.
     Se você quiser ver a verdade por conta própria e desmascarar o que eles escondem no subsolo, use o meu acesso pessoal ao Tarrant OS:
     
-    [CREDENCIAIS DE SEGURANÇA DETECTADAS]
+
     Login: V63b7
     Senha: 4L1x
     
-    Por favor... não tome o chá. Não os deixe olhar no espelho.
+
   -->
-  <meta name="description" content="Fundado em 1985, o Instituto Tarrant é pioneiro em reabilitação cognitiva, psicofarmacologia experimental e tratamento clínico avançado." />
-  
-  <!-- SEO & Metatags -->
+  <meta name="description"
+    content="Fundado em 1985, o Instituto Tarrant é pioneiro em reabilitação cognitiva, psicofarmacologia experimental e tratamento clínico avançado." />
+
   <meta property="og:title" content="Instituto Psiquiátrico Tarrant" />
   <meta property="og:description" content="Descubra um refúgio para reconstrução mental e contenção de traumas." />
   <meta property="og:type" content="website" />
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=VT323&family=Cinzel:wght@700&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=VT323&family=Cinzel:wght@700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/svg+xml" href="favicon_tarrant.svg" />
-  <!-- SweetAlert2 CDN for beautiful custom alerts -->
+
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+
 <body>
 
-  <!-- ==========================================
-       ARG PART 1: THE FAKE INSTITUTIONAL SITE
-       ========================================== -->
   <div id="fake-site">
     <header class="fake-header">
       <div class="logo" id="fake-logo">
@@ -41,23 +42,26 @@
         <a href="#" onclick="openHospitalSubpage('missao'); return false;">Nossa Missão</a>
         <a href="#" onclick="openHospitalSubpage('especialidades'); return false;">Especialidades</a>
         <a href="#" onclick="openHospitalSubpage('corpo-clinico'); return false;">Corpo Clínico</a>
-        <a href="#" id="btn-portal" class="btn-portal" onclick="triggerPortalModal(); return false;">Acesso do Paciente</a>
+        <a href="#" id="btn-portal" class="btn-portal" onclick="triggerPortalModal(); return false;">Acesso do
+          Paciente</a>
       </nav>
     </header>
-    
-    <!-- Hero Section -->
+
     <section class="fake-hero">
       <div class="hero-text">
         <h1 id="hero-title">Excelência em Saúde Mental</h1>
-        <p id="hero-desc">No Instituto Tarrant, combinamos medicina de ponta com um ambiente controlado de acolhimento. O seu passado não define o seu futuro. Nós ajudamos você a esquecer.</p>
+        <p id="hero-desc">No Instituto Tarrant, combinamos medicina de ponta com um ambiente controlado de acolhimento.
+          O seu passado não define o seu futuro. Nós ajudamos você a esquecer.</p>
         <div class="hero-actions">
-          <button class="btn-primary" onclick="document.getElementById('missao').scrollIntoView({behavior: 'smooth'})">Conheça o Instituto</button>
+          <button class="btn-primary"
+            onclick="document.getElementById('missao').scrollIntoView({behavior: 'smooth'})">Conheça o
+            Instituto</button>
         </div>
-        <p class="creepy-sub" aria-hidden="true">Nós apagamos quem você era. Nós controlamos quem você será. Não tente acordar.</p>
+        <p class="creepy-sub" aria-hidden="true">Nós apagamos quem você era. Nós controlamos quem você será. Não tente
+          acordar.</p>
       </div>
     </section>
 
-    <!-- Mission Section -->
     <section class="fake-services" id="missao">
       <div class="container">
         <h2 class="section-title">Nossa Missão</h2>
@@ -65,40 +69,50 @@
         <div class="services-grid">
           <div class="service-card" id="card-rehab">
             <div class="service-icon">
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; transition: stroke 0.3s ease;">
-                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-4.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2Z"/>
-                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-4.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2Z"/>
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"
+                style="display: inline-block; transition: stroke 0.3s ease;">
+                <path
+                  d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-4.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2Z" />
+                <path
+                  d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-4.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2Z" />
               </svg>
             </div>
             <h3>Reabilitação Cognitiva</h3>
-            <p>Protocolos cirúrgicos e farmacológicos desenvolvidos para atenuação de memórias deletérias e reestruturação emocional de traumas latentes.</p>
+            <p>Protocolos cirúrgicos e farmacológicos desenvolvidos para atenuação de memórias deletérias e
+              reestruturação emocional de traumas latentes.</p>
           </div>
           <div class="service-card" id="card-pharma">
             <div class="service-icon">
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; transition: stroke 0.3s ease;">
-                <path d="m10.5 20.5 10-10a4.95 4.95 0 0 0-7-7l-10 10a4.95 4.95 0 0 0 7 7Z"/>
-                <path d="m8.5 8.5 7 7"/>
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"
+                style="display: inline-block; transition: stroke 0.3s ease;">
+                <path d="m10.5 20.5 10-10a4.95 4.95 0 0 0-7-7l-10 10a4.95 4.95 0 0 0 7 7Z" />
+                <path d="m8.5 8.5 7 7" />
               </svg>
             </div>
             <h3>Psicofarmacologia</h3>
-            <p>Laboratórios dedicados à formulação de inibidores sinápticos exclusivos, viabilizando submissão terapêutica e tranquilidade rápida.</p>
+            <p>Laboratórios dedicados à formulação de inibidores sinápticos exclusivos, viabilizando submissão
+              terapêutica e tranquilidade rápida.</p>
           </div>
           <div class="service-card" id="card-intern">
             <div class="service-icon">
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; transition: stroke 0.3s ease;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"
+                style="display: inline-block; transition: stroke 0.3s ease;">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M12 8v8" />
                 <path d="M8 12h8" />
               </svg>
             </div>
             <h3>Internação Intensiva</h3>
-            <p>Alas de monitoramento contínuo equipadas com barreiras físicas e eletromagnéticas para pacientes em estado de dissociação severa.</p>
+            <p>Alas de monitoramento contínuo equipadas com barreiras físicas e eletromagnéticas para pacientes em
+              estado de dissociação severa.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Clinical Body Section -->
     <section class="fake-clinical" id="corpo-clinico">
       <div class="container">
         <h2 class="section-title">Corpo Clínico</h2>
@@ -106,11 +120,13 @@
         <div class="clinical-grid">
           <div class="clinical-card">
             <div class="clinical-avatar">
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block;">
-                <path d="M4.5 16.5c-1.5 1.26-2 3-2 3s3.18-.32 4.5-2c1-.9 1.5-2 1.5-3V9c0-1.1-.9-2-2-2S4.5 7.9 4.5 9v1.5"/>
-                <path d="M19.5 16.5c1.5 1.26 2 3 2 3s-3.18-.32-4.5-2c-1-.9-1.5-2-1.5-3V9c0-1.1.9-2 2-2s2 1.1 2 2v1.5"/>
-                <path d="M12 2v12"/>
-                <path d="M7 9a5 5 0 0 0 10 0"/>
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" style="display: inline-block;">
+                <path
+                  d="M4.5 16.5c-1.5 1.26-2 3-2 3s3.18-.32 4.5-2c1-.9 1.5-2 1.5-3V9c0-1.1-.9-2-2-2S4.5 7.9 4.5 9v1.5" />
+                <path d="M19.5 16.5c1.5 1.26 2 3 2 3s-3.18-.32-4.5-2c-1-.9-1.5-2-1.5-3V9c0-1.1.9-2 2-2s2 1.1 2 2v1.5" />
+                <path d="M12 2v12" />
+                <path d="M7 9a5 5 0 0 0 10 0" />
               </svg>
             </div>
             <h3>Dr. Arthur Tarrant</h3>
@@ -119,7 +135,8 @@
           </div>
           <div class="clinical-card" id="dr-white-card">
             <div class="clinical-avatar">
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" style="display: inline-block;">
                 <path d="M6 18h8" />
                 <path d="M3 22h18" />
                 <path d="M12 6H9" />
@@ -130,11 +147,13 @@
             </div>
             <h3>Dr. Gregory White</h3>
             <span class="clinical-role">Chefe de Neurobiologia Experimental</span>
-            <p>Especialista em bloqueio e contenção de surtos amnésicos. Coordenador do Pavilhão de Isolamento. (Registro funcional: #(153×2)-CAM_A)</p>
+            <p>Especialista em bloqueio e contenção de surtos amnésicos. Coordenador do Pavilhão de Isolamento.
+              (Registro funcional: #(153×2)-CAM_A)</p>
           </div>
           <div class="clinical-card">
             <div class="clinical-avatar">
-              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="var(--fake-accent)" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" style="display: inline-block;">
                 <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
                 <rect x="8" y="2" width="8" height="4" rx="1" />
                 <path d="M9 12h6" />
@@ -143,20 +162,21 @@
             </div>
             <h3>Dra. Helen Carter</h3>
             <span class="clinical-role">Psiquiatra Clínica Chefe</span>
-            <p>"No silêncio das salas de isolamento, encontramos a frequência ideal para restabelecer a ordem cognitiva."</p>
+            <p>"No silêncio das salas de isolamento, encontramos a frequência ideal para restabelecer a ordem
+              cognitiva."</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="fake-footer">
       <div class="container footer-content">
         <div class="footer-info">
           <h3>+ INSTITUTO TARRANT</h3>
           <p>Rodovia Estadual 44, km 12 - Zona Rural</p>
           <p>Telefone: 0800 555 (153×2)</p>
-          <p class="footer-hidden-note" style="opacity: 0.1; font-size: 0.8rem;">CÓDIGO OPERACIONAL: LOG-TARRANT-1985</p>
+          <p class="footer-hidden-note" style="opacity: 0.1; font-size: 0.8rem;">CÓDIGO OPERACIONAL: LOG-TARRANT-1985
+          </p>
         </div>
         <div class="footer-links">
           <a href="privacidade.html">Política de Privacidade</a>
@@ -170,7 +190,6 @@
       </div>
     </footer>
 
-    <!-- MODERN HOSPITAL INFO SUBPAGES MODAL -->
     <div id="hospital-modal" class="hospital-modal hidden">
       <div class="hospital-modal-overlay" onclick="closeHospitalModal()"></div>
       <div class="hospital-modal-content">
@@ -179,12 +198,11 @@
           <button class="hospital-modal-close" onclick="closeHospitalModal()">×</button>
         </div>
         <div class="hospital-modal-body" id="hospital-modal-body">
-          <!-- Injected dynamically via script.js -->
+
         </div>
       </div>
     </div>
 
-    <!-- FAKE LOGIN MODAL -->
     <div id="login-modal" class="hidden">
       <div class="login-box">
         <div class="login-header-bar">
@@ -198,69 +216,63 @@
           <div class="login-fields">
             <label for="login-user">ID do Paciente / Registro:</label>
             <input type="text" id="login-user" placeholder="Ex: PAC-1506" />
-            
+
             <label for="login-pass">Senha de Acesso:</label>
             <input type="password" id="login-pass" placeholder="••••••••" />
           </div>
           <div class="login-actions">
             <button id="btn-login" onclick="triggerBootSequence()">Iniciar Sessão</button>
-            <span class="forgot-pwd" onclick="showClinicalAlert('Entre em contato com a administração do subsolo. Senha padrão dos computadores é a data de fundação do hospital (AAAA-MM-DD).', 'Acesso Restrito')">Esqueceu a senha?</span>
+            <span class="forgot-pwd"
+              onclick="showClinicalAlert('Entre em contato com a administração do subsolo. Senha padrão dos computadores é a data de fundação do hospital (AAAA-MM-DD).', 'Acesso Restrito')">Esqueceu
+              a senha?</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ==========================================
-       ARG PART 2: BOOT / BIOS SCREEN
-       ========================================== -->
   <div id="boot-screen" class="hidden font-mono">
     <div class="boot-log" id="boot-log">
-      <!-- Injected via JavaScript -->
+
     </div>
   </div>
 
-  <!-- ==========================================
-       ARG PART 3: THE TARRANT RETRO OS
-       ========================================== -->
   <div id="os-screen" class="hidden">
     <div class="crt-overlay"></div>
     <div class="vignette"></div>
     <div class="glitch-layer" id="glitch-layer"></div>
-    
-    <!-- Desktop Environment -->
+
     <div class="os-desktop" id="os-desktop">
-      
-      <!-- Desktop Icons -->
+
       <div class="desktop-icon" onclick="openWindow('mail')">
         <div class="desktop-icon-img">
           <svg class="retro-icon" viewBox="0 0 32 32" width="36" height="36">
-            <rect x="2" y="6" width="28" height="20" fill="#ffffff" stroke="#000000" stroke-width="2"/>
-            <path d="M 2 8 L 16 18 L 30 8" fill="none" stroke="#000080" stroke-width="2"/>
-            <path d="M 2 24 L 11 16" fill="none" stroke="#000080" stroke-width="2"/>
-            <path d="M 30 24 L 21 16" fill="none" stroke="#000080" stroke-width="2"/>
+            <rect x="2" y="6" width="28" height="20" fill="#ffffff" stroke="#000000" stroke-width="2" />
+            <path d="M 2 8 L 16 18 L 30 8" fill="none" stroke="#000080" stroke-width="2" />
+            <path d="M 2 24 L 11 16" fill="none" stroke="#000080" stroke-width="2" />
+            <path d="M 30 24 L 21 16" fill="none" stroke="#000080" stroke-width="2" />
           </svg>
         </div>
         <span class="desktop-icon-label">Correio.exe</span>
       </div>
-      
+
       <div class="desktop-icon" onclick="openWindow('files')">
         <div class="desktop-icon-img">
           <svg class="retro-icon" viewBox="0 0 32 32" width="36" height="36">
-            <path d="M 2 6 L 12 6 L 16 10 L 30 10 L 30 26 L 2 26 Z" fill="#ffd700" stroke="#000000" stroke-width="2"/>
-            <path d="M 2 10 L 30 10" fill="none" stroke="#b8860b" stroke-width="2"/>
+            <path d="M 2 6 L 12 6 L 16 10 L 30 10 L 30 26 L 2 26 Z" fill="#ffd700" stroke="#000000" stroke-width="2" />
+            <path d="M 2 10 L 30 10" fill="none" stroke="#b8860b" stroke-width="2" />
           </svg>
         </div>
         <span class="desktop-icon-label">Arquivos.sys</span>
       </div>
-      
+
       <div class="desktop-icon" onclick="openWindow('cam')">
         <div class="desktop-icon-img">
           <svg class="retro-icon" viewBox="0 0 32 32" width="36" height="36">
-            <rect x="6" y="8" width="16" height="12" fill="#808080" stroke="#000000" stroke-width="2"/>
-            <polygon points="22,10 28,6 28,22 22,18" fill="#a0a0a0" stroke="#000000" stroke-width="2"/>
-            <rect x="10" y="20" width="4" height="6" fill="#808080" stroke="#000000" stroke-width="2"/>
-            <line x1="6" y1="26" x2="18" y2="26" stroke="#000000" stroke-width="2"/>
+            <rect x="6" y="8" width="16" height="12" fill="#808080" stroke="#000000" stroke-width="2" />
+            <polygon points="22,10 28,6 28,22 22,18" fill="#a0a0a0" stroke="#000000" stroke-width="2" />
+            <rect x="10" y="20" width="4" height="6" fill="#808080" stroke="#000000" stroke-width="2" />
+            <line x1="6" y1="26" x2="18" y2="26" stroke="#000000" stroke-width="2" />
           </svg>
         </div>
         <span class="desktop-icon-label">Câmeras.sys</span>
@@ -269,36 +281,37 @@
       <div class="desktop-icon" onclick="openWindow('terminal')">
         <div class="desktop-icon-img">
           <svg class="retro-icon" viewBox="0 0 32 32" width="36" height="36">
-            <rect x="2" y="4" width="28" height="20" rx="3" fill="#c0c0c0" stroke="#000000" stroke-width="2"/>
-            <rect x="5" y="7" width="22" height="14" fill="#000000" stroke="#000000" stroke-width="1.5"/>
-            <path d="M 8 24 L 4 28 L 28 28 L 24 24 Z" fill="#808080" stroke="#000000" stroke-width="2"/>
-            <path d="M 8 11 L 11 14 L 8 17" fill="none" stroke="#39ff14" stroke-width="2"/>
-            <line x1="13" y1="17" x2="18" y2="17" stroke="#39ff14" stroke-width="2"/>
+            <rect x="2" y="4" width="28" height="20" rx="3" fill="#c0c0c0" stroke="#000000" stroke-width="2" />
+            <rect x="5" y="7" width="22" height="14" fill="#000000" stroke="#000000" stroke-width="1.5" />
+            <path d="M 8 24 L 4 28 L 28 28 L 24 24 Z" fill="#808080" stroke="#000000" stroke-width="2" />
+            <path d="M 8 11 L 11 14 L 8 17" fill="none" stroke="#39ff14" stroke-width="2" />
+            <line x1="13" y1="17" x2="18" y2="17" stroke="#39ff14" stroke-width="2" />
           </svg>
         </div>
         <span class="desktop-icon-label">Terminal.cmd</span>
       </div>
-      
+
       <div class="desktop-icon" onclick="openWindow('antivirus')">
         <div class="desktop-icon-img">
           <svg class="retro-icon" viewBox="0 0 32 32" width="36" height="36">
-            <path d="M 4 4 L 28 4 L 28 14 C 28 22 16 28 16 28 C 16 28 4 22 4 14 Z" fill="#000080" stroke="#000000" stroke-width="2"/>
+            <path d="M 4 4 L 28 4 L 28 14 C 28 22 16 28 16 28 C 16 28 4 22 4 14 Z" fill="#000080" stroke="#000000"
+              stroke-width="2" />
             <path d="M 6 6 L 16 6 L 16 26 C 16 26 6 20 6 14 Z" fill="#c0c0c0" />
             <path d="M 10 10 L 22 10 L 16 22 Z" fill="#ff0000" />
           </svg>
         </div>
         <span class="desktop-icon-label">TarrantGuard</span>
       </div>
-      
+
       <div class="desktop-icon" onclick="openWindow('trash')">
         <div class="desktop-icon-img">
           <svg class="retro-icon" viewBox="0 0 32 32" width="36" height="36">
-            <rect x="8" y="8" width="16" height="20" fill="#a0a0a0" stroke="#000000" stroke-width="2"/>
-            <line x1="6" y1="5" x2="26" y2="5" stroke="#000000" stroke-width="2"/>
-            <rect x="13" y="2" width="6" height="3" fill="#808080" stroke="#000000" stroke-width="2"/>
-            <line x1="12" y1="12" x2="12" y2="24" stroke="#505050" stroke-width="2"/>
-            <line x1="16" y1="12" x2="16" y2="24" stroke="#505050" stroke-width="2"/>
-            <line x1="20" y1="12" x2="20" y2="24" stroke="#505050" stroke-width="2"/>
+            <rect x="8" y="8" width="16" height="20" fill="#a0a0a0" stroke="#000000" stroke-width="2" />
+            <line x1="6" y1="5" x2="26" y2="5" stroke="#000000" stroke-width="2" />
+            <rect x="13" y="2" width="6" height="3" fill="#808080" stroke="#000000" stroke-width="2" />
+            <line x1="12" y1="12" x2="12" y2="24" stroke="#505050" stroke-width="2" />
+            <line x1="16" y1="12" x2="16" y2="24" stroke="#505050" stroke-width="2" />
+            <line x1="20" y1="12" x2="20" y2="24" stroke="#505050" stroke-width="2" />
           </svg>
         </div>
         <span class="desktop-icon-label">Lixeira</span>
@@ -307,11 +320,11 @@
       <div class="desktop-icon" onclick="runBulasExe()">
         <div class="desktop-icon-img">
           <svg class="retro-icon" viewBox="0 0 32 32" width="36" height="36">
-            <rect x="6" y="4" width="20" height="24" rx="2" fill="#f8fafc" stroke="#000000" stroke-width="2"/>
-            <line x1="10" y1="10" x2="22" y2="10" stroke="#ff0000" stroke-width="2"/>
-            <line x1="10" y1="14" x2="22" y2="14" stroke="#000000" stroke-width="2"/>
-            <line x1="10" y1="18" x2="22" y2="18" stroke="#000000" stroke-width="2"/>
-            <line x1="10" y1="22" x2="18" y2="22" stroke="#000000" stroke-width="2"/>
+            <rect x="6" y="4" width="20" height="24" rx="2" fill="#f8fafc" stroke="#000000" stroke-width="2" />
+            <line x1="10" y1="10" x2="22" y2="10" stroke="#ff0000" stroke-width="2" />
+            <line x1="10" y1="14" x2="22" y2="14" stroke="#000000" stroke-width="2" />
+            <line x1="10" y1="18" x2="22" y2="18" stroke="#000000" stroke-width="2" />
+            <line x1="10" y1="22" x2="18" y2="22" stroke="#000000" stroke-width="2" />
           </svg>
         </div>
         <span class="desktop-icon-label">bulas.exe</span>
@@ -319,12 +332,14 @@
 
     </div>
 
-    <!-- WINDOW WRAPPER TEMPLATE (DYNAMICAL WINDOWS) -->
-    
-    <!-- 1. MAIL WINDOW -->
     <div id="win-mail" class="os-window hidden" style="width: 650px; height: 450px; top: 15%; left: 15%;">
       <div class="window-header" onmousedown="dragStart(event, 'win-mail')">
-        <span class="win-title"><svg class="sys-icon icon-mail" viewBox="0 0 24 24" width="16" height="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6" stroke="#fff"/></svg> Correio Eletrônico - Tarrant Net</span>
+        <span class="win-title"><svg class="sys-icon icon-mail" viewBox="0 0 24 24" width="16" height="16"
+            fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"
+            style="display:inline-block; vertical-align:middle; margin-right:4px;">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" stroke="#fff" />
+          </svg> Correio Eletrônico - Tarrant Net</span>
         <div class="window-controls">
           <button onclick="minimizeWindow('win-mail')">_</button>
           <button onclick="toggleMaximize('win-mail')">[]</button>
@@ -337,7 +352,7 @@
       <div class="window-body mail-window-body">
         <div class="mail-pane">
           <div class="mail-sidebar" id="mail-list">
-            <!-- Mail list injected via script.js -->
+
           </div>
           <div class="mail-content" id="mail-view-pane">
             <div class="mail-empty-state">Selecione uma mensagem para ler.</div>
@@ -346,10 +361,13 @@
       </div>
     </div>
 
-    <!-- 2. FILE EXPLORER WINDOW -->
     <div id="win-files" class="os-window hidden" style="width: 700px; height: 450px; top: 20%; left: 25%;">
       <div class="window-header" onmousedown="dragStart(event, 'win-files')">
-        <span class="win-title"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16" height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg> Explorador de Arquivos - C:/</span>
+        <span class="win-title"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16" height="16" fill="#d97706"
+            stroke="#b45309" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;">
+            <path
+              d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+          </svg> Explorador de Arquivos - C:/</span>
         <div class="window-controls">
           <button onclick="minimizeWindow('win-files')">_</button>
           <button onclick="toggleMaximize('win-files')">[]</button>
@@ -367,17 +385,54 @@
       <div class="window-body explorer-body">
         <div class="explorer-sidebar">
           <ul>
-            <li onclick="explorePath('C:/')"><svg class="sys-icon icon-drv" viewBox="0 0 24 24" width="16" height="16" fill="#94a3b8" stroke="#475569" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><rect x="3" y="8" width="18" height="8" rx="1"/><line x1="6" y1="12" x2="8" y2="12" stroke="#22c55e" stroke-linecap="round"/><circle cx="16" cy="12" r="1" fill="#22c55e"/><circle cx="18" cy="12" r="1" fill="#e11d48"/></svg> Disco Local (C:)</li>
-            <li onclick="explorePath('C:/USERS')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16" height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg> USERS</li>
-            <li onclick="explorePath('C:/RECORDS')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16" height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg> RECORDS</li>
-            <li onclick="explorePath('C:/EXPERIMENTS')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16" height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg> EXPERIMENTS</li>
-            <li onclick="explorePath('C:/CAMERAS')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16" height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg> CAMERAS</li>
-            <li onclick="explorePath('C:/SYSTEM')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16" height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg> SYSTEM</li>
-            <li onclick="explorePath('C:/TRASH')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16" height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg> TRASH</li>
+            <li onclick="explorePath('C:/')"><svg class="sys-icon icon-drv" viewBox="0 0 24 24" width="16" height="16"
+                fill="#94a3b8" stroke="#475569" stroke-width="1.5"
+                style="display:inline-block; vertical-align:middle; margin-right:4px;">
+                <rect x="3" y="8" width="18" height="8" rx="1" />
+                <line x1="6" y1="12" x2="8" y2="12" stroke="#22c55e" stroke-linecap="round" />
+                <circle cx="16" cy="12" r="1" fill="#22c55e" />
+                <circle cx="18" cy="12" r="1" fill="#e11d48" />
+              </svg> Disco Local (C:)</li>
+            <li onclick="explorePath('C:/USERS')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16"
+                height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5"
+                style="display:inline-block; vertical-align:middle; margin-right:4px;">
+                <path
+                  d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+              </svg> USERS</li>
+            <li onclick="explorePath('C:/RECORDS')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16"
+                height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5"
+                style="display:inline-block; vertical-align:middle; margin-right:4px;">
+                <path
+                  d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+              </svg> RECORDS</li>
+            <li onclick="explorePath('C:/EXPERIMENTS')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16"
+                height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5"
+                style="display:inline-block; vertical-align:middle; margin-right:4px;">
+                <path
+                  d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+              </svg> EXPERIMENTS</li>
+            <li onclick="explorePath('C:/CAMERAS')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16"
+                height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5"
+                style="display:inline-block; vertical-align:middle; margin-right:4px;">
+                <path
+                  d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+              </svg> CAMERAS</li>
+            <li onclick="explorePath('C:/SYSTEM')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16"
+                height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5"
+                style="display:inline-block; vertical-align:middle; margin-right:4px;">
+                <path
+                  d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+              </svg> SYSTEM</li>
+            <li onclick="explorePath('C:/TRASH')"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16"
+                height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5"
+                style="display:inline-block; vertical-align:middle; margin-right:4px;">
+                <path
+                  d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+              </svg> TRASH</li>
           </ul>
         </div>
         <div class="explorer-grid" id="explorer-grid">
-          <!-- Files & folders dynamically injected -->
+
         </div>
       </div>
       <div class="explorer-status-bar">
@@ -385,10 +440,14 @@
       </div>
     </div>
 
-    <!-- 3. CAMERA MONITOR WINDOW -->
     <div id="win-cam" class="os-window hidden" style="width: 600px; height: 480px; top: 10%; left: 30%;">
       <div class="window-header" onmousedown="dragStart(event, 'win-cam')">
-        <span class="win-title"><svg class="sys-icon icon-cam" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4" fill="#052e16"/></svg> Monitoramento de Câmeras em Tempo Real</span>
+        <span class="win-title"><svg class="sys-icon icon-cam" viewBox="0 0 24 24" width="16" height="16" fill="none"
+            stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            style="display:inline-block; vertical-align:middle; margin-right:4px;">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z" />
+            <circle cx="12" cy="13" r="4" fill="#052e16" />
+          </svg> Monitoramento de Câmeras em Tempo Real</span>
         <div class="window-controls">
           <button onclick="minimizeWindow('win-cam')">_</button>
           <button onclick="toggleMaximize('win-cam')">[]</button>
@@ -413,7 +472,8 @@
             <div class="cam-pass-lock" id="cam-pass-lock-area">
               <span style="font-size:0.8rem; color:#888;">Desbloquear Câmeras Restritas:</span>
               <div style="display:flex; gap:5px; margin-top:3px;">
-                <input type="password" id="cam-lock-pwd" placeholder="Senha..." style="width:70px; font-family:'VT323'; font-size:1rem;" />
+                <input type="password" id="cam-lock-pwd" placeholder="Senha..."
+                  style="width:70px; font-family:'VT323'; font-size:1rem;" />
                 <button onclick="unlockCams()" style="font-family:'VT323'; font-size:1rem; cursor:pointer;">OK</button>
               </div>
             </div>
@@ -422,10 +482,13 @@
       </div>
     </div>
 
-    <!-- 4. CRT TERMINAL WINDOW -->
     <div id="win-terminal" class="os-window hidden" style="width: 750px; height: 500px; top: 15%; left: 20%;">
       <div class="window-header" onmousedown="dragStart(event, 'win-terminal')">
-        <span class="win-title"><svg class="sys-icon icon-cmd" viewBox="0 0 24 24" width="16" height="16" fill="#0f172a" stroke="#64748b" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="m6 8 4 4-4 4M12 15h6" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/></svg> Terminal.cmd - Acesso de Baixo Nível</span>
+        <span class="win-title"><svg class="sys-icon icon-cmd" viewBox="0 0 24 24" width="16" height="16" fill="#0f172a"
+            stroke="#64748b" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;">
+            <rect x="2" y="3" width="20" height="18" rx="2" />
+            <path d="m6 8 4 4-4 4M12 15h6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" />
+          </svg> Terminal.cmd - Acesso de Baixo Nível</span>
         <div class="window-controls">
           <button onclick="minimizeWindow('win-terminal')">_</button>
           <button onclick="toggleMaximize('win-terminal')">[]</button>
@@ -440,20 +503,25 @@
             DIGITE 'HELP' PARA OBTER UMA LISTA DE COMANDOS DO SISTEMA.
           </div>
           <div class="terminal-output" id="term-output">
-            <!-- Terminal text injected here -->
+
           </div>
           <div class="terminal-input-row">
             <span class="term-prompt" id="term-prompt">C:\></span>
-            <input type="text" id="term-input" autocomplete="off" spellcheck="false" onkeydown="handleTerminalEnter(event)" />
+            <input type="text" id="term-input" autocomplete="off" spellcheck="false"
+              onkeydown="handleTerminalEnter(event)" />
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 5. TARRANTGUARD ANTIVIRUS WINDOW -->
     <div id="win-antivirus" class="os-window hidden" style="width: 500px; height: 350px; top: 25%; left: 35%;">
       <div class="window-header" onmousedown="dragStart(event, 'win-antivirus')">
-        <span class="win-title"><svg class="sys-icon icon-guard" viewBox="0 0 24 24" width="16" height="16" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 8v8M9 12h6" stroke="#60a5fa" stroke-width="2.5"/></svg> TarrantGuard Antivírus Plus v2.1</span>
+        <span class="win-title"><svg class="sys-icon icon-guard" viewBox="0 0 24 24" width="16" height="16"
+            fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"
+            style="display:inline-block; vertical-align:middle; margin-right:4px;">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+            <path d="M12 8v8M9 12h6" stroke="#60a5fa" stroke-width="2.5" />
+          </svg> TarrantGuard Antivírus Plus v2.1</span>
         <div class="window-controls">
           <button onclick="minimizeWindow('win-antivirus')">_</button>
           <button onclick="closeWindow('win-antivirus')">X</button>
@@ -461,11 +529,16 @@
       </div>
       <div class="window-body antivirus-body text-center">
         <div class="antivirus-logo">
-          <svg class="sys-icon icon-guard" viewBox="0 0 24 24" width="64" height="64" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" style="display:inline-block; vertical-align:middle; filter: drop-shadow(0 2px 8px rgba(30,58,138,0.25));"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 8v8M9 12h6" stroke="#60a5fa" stroke-width="2.5"/></svg>
+          <svg class="sys-icon icon-guard" viewBox="0 0 24 24" width="64" height="64" fill="#1e3a8a" stroke="#3b82f6"
+            stroke-width="2"
+            style="display:inline-block; vertical-align:middle; filter: drop-shadow(0 2px 8px rgba(30,58,138,0.25));">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+            <path d="M12 8v8M9 12h6" stroke="#60a5fa" stroke-width="2.5" />
+          </svg>
         </div>
         <h3>TarrantGuard Proteção Total</h3>
         <p>Garantindo que nenhuma intrusão cognitiva externa corrompa este sistema.</p>
-        
+
         <div class="antivirus-progress-container hidden" id="scan-progress-box">
           <div class="scan-file-label" id="scan-file-label">A analisar: C:/SYSTEM/boot.sys</div>
           <div class="antivirus-progress-bar">
@@ -476,15 +549,20 @@
         <div id="antivirus-status" class="antivirus-status-text text-green">
           Status: SEGURO. Nenhuma ameaça mental detectada.
         </div>
-        
+
         <button id="btn-scan" class="os-btn" onclick="startAntivirusScan()">Escanear Disco C:/</button>
       </div>
     </div>
 
-    <!-- 6. LIXEIRA WINDOW -->
     <div id="win-trash" class="os-window hidden" style="width: 550px; height: 380px; top: 30%; left: 20%;">
       <div class="window-header" onmousedown="dragStart(event, 'win-trash')">
-        <span class="win-title"><svg class="sys-icon icon-trash" viewBox="0 0 24 24" width="16" height="16" fill="#334155" stroke="#1e293b" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6" stroke-linecap="round"/></svg> Lixeira</span>
+        <span class="win-title"><svg class="sys-icon icon-trash" viewBox="0 0 24 24" width="16" height="16"
+            fill="#334155" stroke="#1e293b" stroke-width="1.5"
+            style="display:inline-block; vertical-align:middle; margin-right:4px;">
+            <path
+              d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"
+              stroke-linecap="round" />
+          </svg> Lixeira</span>
         <div class="window-controls">
           <button onclick="minimizeWindow('win-trash')">_</button>
           <button onclick="closeWindow('win-trash')">X</button>
@@ -496,35 +574,46 @@
           <button onclick="restoreAllTrash()" class="os-btn">Restaurar Todos os Itens</button>
         </div>
         <div class="trash-grid" id="trash-grid">
-          <!-- Dynamically filled with deleted items -->
+
         </div>
       </div>
     </div>
 
-    <!-- 7. SECURE TEXT READER WINDOW (FOR FILES) -->
-    <div id="win-reader" class="os-window hidden" style="width: 500px; height: 400px; top: 25%; left: 30%; z-index: 10005;">
+    <div id="win-reader" class="os-window hidden"
+      style="width: 500px; height: 400px; top: 25%; left: 30%; z-index: 10005;">
       <div class="window-header" onmousedown="dragStart(event, 'win-reader')">
-        <span class="win-title" id="reader-title"><svg class="sys-icon icon-txt" viewBox="0 0 24 24" width="16" height="16" fill="#f8fafc" stroke="#64748b" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:4px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg> Visualizador de Arquivo</span>
+        <span class="win-title" id="reader-title"><svg class="sys-icon icon-txt" viewBox="0 0 24 24" width="16"
+            height="16" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"
+            style="display:inline-block; vertical-align:middle; margin-right:4px;">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+          </svg> Visualizador de Arquivo</span>
         <div class="window-controls">
           <button onclick="closeWindow('win-reader')">X</button>
         </div>
       </div>
       <div class="window-body reader-body">
         <div class="reader-content" id="reader-content-area">
-          <!-- Text file contents go here -->
+
         </div>
       </div>
     </div>
 
-    <!-- 8. FAKE SYSTEM ERROR POPUP -->
-    <div id="win-error-popup" class="os-window hidden" style="width: 380px; height: 160px; top: 40%; left: 35%; z-index: 10009;">
+    <div id="win-error-popup" class="os-window hidden"
+      style="width: 380px; height: 160px; top: 40%; left: 35%; z-index: 10009;">
       <div class="window-header header-red">
         <span>Erro Fatal do Sistema</span>
         <button onclick="closeErrorPopup()">X</button>
       </div>
       <div class="window-body error-popup-body">
         <div class="error-popup-content">
-          <span class="error-popup-icon"><svg class="sys-icon icon-aviso" viewBox="0 0 24 24" width="20" height="20" fill="#eab308" stroke="#a16207" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:6px;"><path d="m12 3 10 18H2L12 3Z" stroke-linejoin="round"/><line x1="12" y1="9" x2="12" y2="13" stroke="#000" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="1.5" fill="#000" stroke="none"/></svg></span>
+          <span class="error-popup-icon"><svg class="sys-icon icon-aviso" viewBox="0 0 24 24" width="20" height="20"
+              fill="#eab308" stroke="#a16207" stroke-width="1.5"
+              style="display:inline-block; vertical-align:middle; margin-right:6px;">
+              <path d="m12 3 10 18H2L12 3Z" stroke-linejoin="round" />
+              <line x1="12" y1="9" x2="12" y2="13" stroke="#000" stroke-width="2" stroke-linecap="round" />
+              <circle cx="12" cy="17" r="1.5" fill="#000" stroke="none" />
+            </svg></span>
           <p id="error-popup-msg">Memória insuficiente. Falha catastrófica ao carregar a realidade.</p>
         </div>
         <div class="error-popup-actions">
@@ -534,65 +623,117 @@
       </div>
     </div>
 
-    <!-- Retro Windows Taskbar -->
     <footer class="os-taskbar">
       <div class="start-btn-container">
         <button class="start-btn" id="start-btn" onclick="toggleStartMenu()">
           <span style="font-size:1.2rem; margin-right:4px;">+</span> Iniciar
         </button>
-        
-        <!-- Start Menu -->
+
         <div class="start-menu hidden" id="start-menu">
           <div class="start-menu-sidebar">
             <span>TARRANT OS</span>
           </div>
           <div class="start-menu-items">
-            <div class="start-item" onclick="openWindow('mail'); toggleStartMenu();"><svg class="sys-icon icon-mail" viewBox="0 0 24 24" width="16" height="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5" style="display:inline-block; vertical-align:middle;"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6" stroke="#fff"/></svg> Correio</div>
-            <div class="start-item" onclick="openWindow('files'); toggleStartMenu();"><svg class="sys-icon icon-dir" viewBox="0 0 24 24" width="16" height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5" style="display:inline-block; vertical-align:middle;"><path d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z"/></svg> Explorador de Arquivos</div>
-            <div class="start-item" onclick="openWindow('cam'); toggleStartMenu();"><svg class="sys-icon icon-cam" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4" fill="#052e16"/></svg> Câmeras de Vigilância</div>
-            <div class="start-item" onclick="openWindow('terminal'); toggleStartMenu();"><svg class="sys-icon icon-cmd" viewBox="0 0 24 24" width="16" height="16" fill="#0f172a" stroke="#64748b" stroke-width="1.5" style="display:inline-block; vertical-align:middle;"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="m6 8 4 4-4 4M12 15h6" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/></svg> Prompt do Terminal</div>
-            <div class="start-item" onclick="openWindow('antivirus'); toggleStartMenu();"><svg class="sys-icon icon-guard" viewBox="0 0 24 24" width="16" height="16" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" style="display:inline-block; vertical-align:middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 8v8M9 12h6" stroke="#60a5fa" stroke-width="2.5"/></svg> TarrantGuard Antivírus</div>
+            <div class="start-item" onclick="openWindow('mail'); toggleStartMenu();"><svg class="sys-icon icon-mail"
+                viewBox="0 0 24 24" width="16" height="16" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1.5"
+                style="display:inline-block; vertical-align:middle;">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" stroke="#fff" />
+              </svg> Correio</div>
+            <div class="start-item" onclick="openWindow('files'); toggleStartMenu();"><svg class="sys-icon icon-dir"
+                viewBox="0 0 24 24" width="16" height="16" fill="#d97706" stroke="#b45309" stroke-width="1.5"
+                style="display:inline-block; vertical-align:middle;">
+                <path
+                  d="M3 7a2 2 0 0 1 2-2h3.28a1 1 0 0 1 .9.55l1.64 3.29A1 1 0 0 0 11.72 9H19a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+              </svg> Explorador de Arquivos</div>
+            <div class="start-item" onclick="openWindow('cam'); toggleStartMenu();"><svg class="sys-icon icon-cam"
+                viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#22c55e" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z" />
+                <circle cx="12" cy="13" r="4" fill="#052e16" />
+              </svg> Câmeras de Vigilância</div>
+            <div class="start-item" onclick="openWindow('terminal'); toggleStartMenu();"><svg class="sys-icon icon-cmd"
+                viewBox="0 0 24 24" width="16" height="16" fill="#0f172a" stroke="#64748b" stroke-width="1.5"
+                style="display:inline-block; vertical-align:middle;">
+                <rect x="2" y="3" width="20" height="18" rx="2" />
+                <path d="m6 8 4 4-4 4M12 15h6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" />
+              </svg> Prompt do Terminal</div>
+            <div class="start-item" onclick="openWindow('antivirus'); toggleStartMenu();"><svg
+                class="sys-icon icon-guard" viewBox="0 0 24 24" width="16" height="16" fill="#1e3a8a" stroke="#3b82f6"
+                stroke-width="2" style="display:inline-block; vertical-align:middle;">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+                <path d="M12 8v8M9 12h6" stroke="#60a5fa" stroke-width="2.5" />
+              </svg> TarrantGuard Antivírus</div>
             <div class="start-divider"></div>
-            <div class="start-item" onclick="showSanityStats(); toggleStartMenu();"><svg class="sys-icon icon-sanity" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Diagnóstico Clínico</div>
-            <div class="start-item" onclick="triggerRestartSequence(); toggleStartMenu();"><svg class="sys-icon icon-reboot" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l6.73-5.19"/></svg> Reiniciar Computador</div>
-            <div class="start-item" onclick="triggerShutdownSequence(); toggleStartMenu();"><svg class="sys-icon icon-shutdown" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M18.36 6.64a9 9 0 1 1-12.73 0M12 2v10"/></svg> Desligar Terminal</div>
+            <div class="start-item" onclick="showSanityStats(); toggleStartMenu();"><svg class="sys-icon icon-sanity"
+                viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ef4444" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg> Diagnóstico Clínico</div>
+            <div class="start-item" onclick="triggerRestartSequence(); toggleStartMenu();"><svg
+                class="sys-icon icon-reboot" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f59e0b"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="display:inline-block; vertical-align:middle;">
+                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l6.73-5.19" />
+              </svg> Reiniciar Computador</div>
+            <div class="start-item" onclick="triggerShutdownSequence(); toggleStartMenu();"><svg
+                class="sys-icon icon-shutdown" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ef4444"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                style="display:inline-block; vertical-align:middle;">
+                <path d="M18.36 6.64a9 9 0 1 1-12.73 0M12 2v10" />
+              </svg> Desligar Terminal</div>
           </div>
         </div>
       </div>
-      
+
       <div class="taskbar-tabs" id="taskbar-tabs">
-        <!-- Open windows tabs go here dynamically -->
+
       </div>
-      
+
       <div class="taskbar-tray">
-        <span class="tray-icon" title="Conexão de Rede Estabelecida"><svg class="sys-icon icon-net" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M12 9h.01M8 9h.01M16 9h.01" stroke-width="3"/></svg></span>
-        <span class="tray-icon" title="TarrantGuard Ativo"><svg class="sys-icon icon-guard" viewBox="0 0 24 24" width="16" height="16" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" style="display:inline-block; vertical-align:middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M12 8v8M9 12h6" stroke="#60a5fa" stroke-width="2.5"/></svg></span>
+        <span class="tray-icon" title="Conexão de Rede Estabelecida"><svg class="sys-icon icon-net" viewBox="0 0 24 24"
+            width="16" height="16" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" style="display:inline-block; vertical-align:middle;">
+            <rect x="2" y="3" width="20" height="14" rx="2" />
+            <line x1="8" y1="21" x2="16" y2="21" />
+            <line x1="12" y1="17" x2="12" y2="21" />
+            <path d="M12 9h.01M8 9h.01M16 9h.01" stroke-width="3" />
+          </svg></span>
+        <span class="tray-icon" title="TarrantGuard Ativo"><svg class="sys-icon icon-guard" viewBox="0 0 24 24"
+            width="16" height="16" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"
+            style="display:inline-block; vertical-align:middle;">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+            <path d="M12 8v8M9 12h6" stroke="#60a5fa" stroke-width="2.5" />
+          </svg></span>
         <span class="tray-icon" title="Sanidade Sistêmica" id="sanity-tray-icon">SANITY: 100%</span>
         <span class="tray-clock" id="taskbar-clock">03:06:00</span>
       </div>
     </footer>
 
-    <!-- RETRO SIMULATED OS MESSAGE BOX -->
-    <div id="os-msg-box" class="os-window hidden" style="width: 380px; height: 160px; top: 40%; left: 35%; z-index: 20000;">
+    <div id="os-msg-box" class="os-window hidden"
+      style="width: 380px; height: 160px; top: 40%; left: 35%; z-index: 20000;">
       <div class="window-header">
         <span id="os-msg-title">Mensagem do Sistema</span>
         <button onclick="closeOSMsgBox()">X</button>
       </div>
       <div class="window-body error-popup-body">
         <div class="error-popup-content">
-          <span class="error-popup-icon" id="os-msg-icon"><svg class="sys-icon icon-aviso" viewBox="0 0 24 24" width="20" height="20" fill="#eab308" stroke="#a16207" stroke-width="1.5" style="display:inline-block; vertical-align:middle; margin-right:6px;"><path d="m12 3 10 18H2L12 3Z" stroke-linejoin="round"/><line x1="12" y1="9" x2="12" y2="13" stroke="#000" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="1.5" fill="#000" stroke="none"/></svg></span>
+          <span class="error-popup-icon" id="os-msg-icon"><svg class="sys-icon icon-aviso" viewBox="0 0 24 24"
+              width="20" height="20" fill="#eab308" stroke="#a16207" stroke-width="1.5"
+              style="display:inline-block; vertical-align:middle; margin-right:6px;">
+              <path d="m12 3 10 18H2L12 3Z" stroke-linejoin="round" />
+              <line x1="12" y1="9" x2="12" y2="13" stroke="#000" stroke-width="2" stroke-linecap="round" />
+              <circle cx="12" cy="17" r="1.5" fill="#000" stroke="none" />
+            </svg></span>
           <p id="os-msg-text">Conteúdo do alerta.</p>
         </div>
         <div class="error-popup-actions" id="os-msg-actions">
-          <!-- Dynamically filled with OK / YES / NO buttons -->
+
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ==========================================
-       ARG PART 4: FAKE BLUE SCREEN OF DEATH (BSOD)
-       ========================================== -->
   <div id="bsod-screen" class="hidden">
     <div class="bsod-content font-mono">
       <div class="bsod-title">TARRANT OS v1.88</div>
@@ -600,7 +741,8 @@
       <p>A realidade física da paciente falhou em sincronizar com o subsolo do Instituto.</p>
       <br>
       <p>* Pressione qualquer tecla para tentar reinserir a consciência.</p>
-      <p>* Pressione CTRL+ALT+DEL para reiniciar. Todas as memórias não salvas serão permanentemente apagadas. ELA NUNCA ESTEVE LÁ.</p>
+      <p>* Pressione CTRL+ALT+DEL para reiniciar. Todas as memórias não salvas serão permanentemente apagadas. ELA NUNCA
+        ESTEVE LÁ.</p>
       <br>
       <p>Código do Erro: <span id="bsod-error-code">PATIENT_A_ESCAPE_ATTEMPT</span></p>
       <p>Sanidade Sistêmica: <span id="bsod-sanity">0%</span></p>
@@ -609,8 +751,7 @@
     </div>
   </div>
 
-  <!-- Hidden audio elements (Fallback synthesizer in JS code executes if files are missing, ensuring absolute stability) -->
-  
   <script src="script.js"></script>
 </body>
+
 </html>
