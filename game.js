@@ -286,9 +286,7 @@ window.addEventListener('scroll', () => {
   shards.forEach(s => {
     let p = Math.max(0, (progress - 0.05) / 0.95);
     if (p > 0) {
-      if (!hasShatteredPlay) {
-        playProceduralShatterSound();
-      }
+
       const tx = s.dx * Math.pow(p, 1.4);
       const ty = s.dy * Math.pow(p, 1.4);
       const r = s.rot * p;
